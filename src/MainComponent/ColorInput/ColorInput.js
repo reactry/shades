@@ -2,6 +2,10 @@ import React from 'react';
 
 import TopTabBar from './TopTabBar';
 
+import HexTab from './HexTab';
+import RGBTab from './RGBTab';
+import HSLTab from './HSLTab';
+
 const tabs = [
 	{
 		"title": "Hex"
@@ -24,12 +28,24 @@ export default function ColorInput ({
 	let topTabBarProps = {
 		tabs, currentTabIndex, setCurrentTabIndex
 	};
+
+	function getCurrentTab () {
+		let currentTabTitle = tabs[currentTabIndex].title;
+		if (currentTabTitle === "Hex") {
+			return <HexTab />;
+		} else if (currentTabTitle === "RGB") {
+			return <RGBTab />;
+		} else if (currentTabTitle === "HSL") {
+			return <HSLTab />;
+		}
+	}
+
 	return (
 		<div className="ColorInput bg-slate-300 py-8">
 			<div className="max-w-xl m-auto bg-slate-100">
 				<TopTabBar {...topTabBarProps} />
 				<div className="p-4">
-					<h2>Hallo</h2>
+					{getCurrentTab()}
 				</div>
 			</div>
 		</div>
