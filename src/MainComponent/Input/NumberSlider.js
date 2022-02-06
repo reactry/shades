@@ -16,15 +16,18 @@ export default function NumberSlider ({
 			// left arrow
 			e.preventDefault();
 			let newX = x - step;
-			if (newX >= min) setX(newX);
+			(newX >= min) ? setX(newX) : setX(min);
 		} else if (keyCode === 39) {
 			// right arrow
 			e.preventDefault();
 			let newX = x + step;
-			if (newX <= max) setX(newX);
+			(newX <= max) ? setX(newX) : setX(max);
 		}
 	}
 
+	let style = {
+		width: Math.floor((x/max) * 100) + "%"
+	}
 	let parentClass = bgPassive + " cursor-pointer";
 
 	return (
@@ -33,7 +36,7 @@ export default function NumberSlider ({
 			<div>
 				<h2 className="mb-1 px-1">{title}</h2>
 				<div className={parentClass} onClick={handleClick}>
-					<div className={"h-4 w-24 relative " + bgActive}>
+					<div className={"h-4 relative " + bgActive} style={style}>
 						<div className="absolute -right-1 -top-1 h-6 w-2 bg-slate-600 border-2 border-white outline outline-2 outline-slate-800"></div>
 					</div>
 				</div>
