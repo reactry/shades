@@ -1,5 +1,6 @@
 import RainbowBorder from './RainbowBorder';
 import MainComponent from './MainComponent';
+import Branding from './Branding';
 import Thanks from './Thanks';
 import Footer from './Footer';
 
@@ -26,6 +27,8 @@ function App () {
 		<div className="App">
 			<RainbowBorder bgClasses={bgClasses} />
 			<MainComponent {...mainProps} />
+			<RainbowBorder bgClasses={bgClasses} />
+			<Branding meta={settings.meta} />
 			<RainbowBorder bgClasses={bgClasses} />
 			<Thanks {...thanksProps} />
 			<RainbowBorder bgClasses={bgClasses} />

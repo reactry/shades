@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Branding from './Branding';
 import ColorInput from './Input';
 import ColorOutput from './Output';
 
@@ -25,7 +24,6 @@ export default function MainComponent ({settings}) {
 		<>
 			<ColorInput {...colorInputProps} />
 			<ColorOutput {...colorOutputProps} />
-			<Branding meta={settings.meta} />
 		</>
 	);
 }
