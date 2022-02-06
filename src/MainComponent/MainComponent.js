@@ -29,9 +29,9 @@ export default function MainComponent ({settings}) {
 	return (
 		<>
 			<RainbowBorder bgClasses={bgClasses} />
-			<Branding meta={settings.meta} />
 			<ColorInput {...colorInputProps} />
 			<ColorOutput {...colorOutputProps} />
+			<Branding meta={settings.meta} />
 		</>
 	);
 }

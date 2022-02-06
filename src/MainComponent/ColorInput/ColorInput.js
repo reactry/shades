@@ -8,6 +8,9 @@ const tabs = [
 	},
 	{
 		"title": "RGB"
+	},
+	{
+		"title": "HSL"
 	}
 ];
 
@@ -22,8 +25,13 @@ export default function ColorInput ({
 		tabs, currentTabIndex, setCurrentTabIndex
 	};
 	return (
-		<div className="ColorInput bg-slate-300">
-			<TopTabBar {...topTabBarProps} />
+		<div className="ColorInput bg-slate-300 py-8">
+			<div className="max-w-xl m-auto bg-slate-100">
+				<TopTabBar {...topTabBarProps} />
+				<div className="p-4">
+					<h2>Hallo</h2>
+				</div>
+			</div>
 		</div>
 	);
 }
