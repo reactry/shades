@@ -73,14 +73,14 @@ export default function ColorInput ({
 	return (
 		<div className="ColorInput bg-slate-300">
 			<div className="md:flex max-w-5xl m-auto">
-				<div className="max-w-xl grow bg-slate-100">
+				<div className="grow bg-slate-100">
 					<TopTabBar {...topTabBarProps} />
 					<div className="pt-4">
 						{getCurrentTab()}
 					</div>
 					<NSelector {...nSelectorProps} />
 				</div>
-				<div className="grow">
+				<div className="md:w-1/2">
 					<BigBox {...bigBoxProps} />
 				</div>
 			</div>
