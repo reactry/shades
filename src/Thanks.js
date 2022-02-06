@@ -13,7 +13,7 @@ export default function Thanks ({thanks}) {
 	});
 
 	return (
-		<div className="Thanks bg-slate-300 py-12">
+		<div className="Thanks bg-slate-300 py-16">
 			<div>
 				<h2 className="text-3xl text-center">Thanks</h2>
 			</div>

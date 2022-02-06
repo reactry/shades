@@ -3,7 +3,7 @@
 
 export default function Branding ({meta}) {
 	return (
-		<header className="px-4 py-12 bg-slate-700 shadow-xl">
+		<header className="px-4 py-16 bg-slate-700 shadow-xl">
 			<a className="block bg-white max-w-sm m-auto text-center" href="">
 				<div className="flex justify-center">
 					<h3 className="px-12 py-2 text-md font-bold bg-slate-300">Reactry's</h3>
