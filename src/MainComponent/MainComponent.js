@@ -12,6 +12,8 @@ export default function MainComponent ({settings}) {
 	let [green, setGreen] = React.useState(128);
 	let [blue, setBlue] = React.useState(128);
 
+	let [n, setN] = React.useState(10);
+
 	let bgClasses = [
 		"bg-red-500", "bg-slate-500",
 		"bg-blue-500", "bg-slate-500-500",
@@ -19,11 +21,11 @@ export default function MainComponent ({settings}) {
 	];
 
 	let colorInputProps = {
-		red, green, blue,
-		setRed, setGreen, setBlue
+		red, green, blue, n,
+		setRed, setGreen, setBlue, setN,
 	};
 	let colorOutputProps = {
-		red, green, blue
+		red, green, blue, n
 	};
 
 	return (
