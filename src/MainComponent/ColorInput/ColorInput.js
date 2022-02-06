@@ -31,12 +31,26 @@ export default function ColorInput ({
 
 	function getCurrentTab () {
 		let currentTabTitle = tabs[currentTabIndex].title;
+		let colorsAndSetters = {
+			red, green, blue,
+			setRed, setGreen, setBlue
+		};
+
 		if (currentTabTitle === "Hex") {
-			return <HexTab />;
+			let hexProps = {
+				...colorsAndSetters
+			};
+			return <HexTab {...hexProps} />;
 		} else if (currentTabTitle === "RGB") {
-			return <RGBTab />;
+			let rgbProps = {
+				...colorsAndSetters
+			};
+			return <RGBTab {...rgbProps} />;
 		} else if (currentTabTitle === "HSL") {
-			return <HSLTab />;
+			let hslProps = {
+				...colorsAndSetters
+			};
+			return <HSLTab {...hslProps} />;
 		}
 	}
 
