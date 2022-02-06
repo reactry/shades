@@ -7,14 +7,13 @@ export default function List ({
 }) {
 
 	let colorItems = colors.map((color, i) => {
-		let props = {color};
+		let props = {...color};
 		return <Box key={i} {...props} />;
 	});
 
 	return (
-		<div className="List">
-			<h1>List</h1>
-			<div>
+		<div className="List py-4">
+			<div className="flex flex-wrap">
 				{colorItems}
 			</div>
 		</div>
