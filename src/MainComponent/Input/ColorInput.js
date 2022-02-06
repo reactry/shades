@@ -32,6 +32,30 @@ export default function ColorInput ({
 		tabs, currentTabIndex, setCurrentTabIndex
 	};
 
+	function randomizeColor () {
+		let r = Math.floor(Math.random() * 255);
+		let g = Math.floor(Math.random() * 255);
+		let b = Math.floor(Math.random() * 255);
+		setRed(r); setGreen(g); setBlue(b);
+	}
+
+	let bigBoxProps = {red, green, blue, randomizeColor};
+
+	React.useEffect(() => {
+		function keydownEvent (e) {
+			let keyCode = e.keyCode;
+			if (keyCode === 32) {
+				e.preventDefault();
+				randomizeColor();
+			}
+		}
+		document.addEventListener('keydown', keydownEvent, false);
+
+		return function cleanUp () {
+			document.removeEventListener('keydown', keydownEvent, false);
+		}
+	}, []);
+
 	function getCurrentTab () {
 		let currentTabTitle = tabs[currentTabIndex].title;
 		let colorsAndSetters = {
@@ -60,15 +84,6 @@ export default function ColorInput ({
 	let nSelectorProps = {
 		n, setN, maxN: 15
 	};
-
-	function randomizeColor () {
-		let r = Math.floor(Math.random() * 255);
-		let g = Math.floor(Math.random() * 255);
-		let b = Math.floor(Math.random() * 255);
-		setRed(r); setGreen(g); setBlue(b);
-	}
-
-	let bigBoxProps = {red, green, blue, randomizeColor};
 
 	return (
 		<div className="ColorInput bg-slate-300">
