@@ -61,7 +61,14 @@ export default function ColorInput ({
 		n, setN, maxN: 15
 	};
 
-	let bigBoxProps = {red, green, blue};
+	function randomizeColor () {
+		let r = Math.floor(Math.random() * 255);
+		let g = Math.floor(Math.random() * 255);
+		let b = Math.floor(Math.random() * 255);
+		setRed(r); setGreen(g); setBlue(b);
+	}
+
+	let bigBoxProps = {red, green, blue, randomizeColor};
 
 	return (
 		<div className="ColorInput bg-slate-300">
