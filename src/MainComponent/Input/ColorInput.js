@@ -32,6 +32,10 @@ export default function ColorInput ({
 		tabs, currentTabIndex, setCurrentTabIndex
 	};
 
+	function randomizeRed () {setRed(Math.floor(Math.random() * 255));}
+	function randomizeGreen () {setGreen(Math.floor(Math.random() * 255));}
+	function randomizeBlue () {setBlue(Math.floor(Math.random() * 255));}
+
 	function randomizeColor () {
 		let r = Math.floor(Math.random() * 255);
 		let g = Math.floor(Math.random() * 255);
@@ -67,16 +71,19 @@ export default function ColorInput ({
 			case "W": changeX(red, setRed, -5); break;
 			case "E": changeX(red, setRed, 5); break;
 			case "R": changeX(red, setRed, 25); break;
+			case "T": randomizeRed(); break;
 
 			case "A": changeX(green, setGreen, -25); break;
 			case "S": changeX(green, setGreen, -5); break;
 			case "D": changeX(green, setGreen, 5); break;
 			case "F": changeX(green, setGreen, 25); break;
+			case "G": randomizeGreen(); break;
 
 			case "Z": changeX(blue, setBlue, -25); break;
 			case "X": changeX(blue, setBlue, -5); break;
 			case "C": changeX(blue, setBlue, 5); break;
 			case "V": changeX(blue, setBlue, 25); break;
+			case "B": randomizeBlue(); break;
 
 			default: break;
 		}
