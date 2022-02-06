@@ -1,4 +1,5 @@
 import MainComponent from './MainComponent';
+import Thanks from './Thanks';
 import Footer from './Footer';
 
 import settings from './settings.json';
@@ -6,15 +7,18 @@ import settings from './settings.json';
 
 
 function App () {
-	const links = settings.links;
 	let mainProps = {settings};
-	let footerProps = {
-		links
-	};
+
+	const links = settings.links;
+	let footerProps = {links};
+
+	const thanks = settings.thanks;
+	let thanksProps = {thanks};
 
 	return (
 		<div className="App">
 			<MainComponent {...mainProps} />
+			<Thanks {...thanksProps} />
 			<Footer {...footerProps} />
 		</div>
 	);

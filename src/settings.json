@@ -16,12 +16,12 @@
 	"thanks": [
 		{
 			"title": "rgbToHex - stackoverflow",
-			"description": "Thanks to Tim Down for sharing the code for color conversion functions.",
+			"description": "Thanks to Tim Down and other contributors at stackoverflow for sharing the code for color conversion.",
 			"url": "https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb"
 		},
 		{
-			"title": "generating shades - maketintsandshades",
-			"description": "Thanks to Tim Down for sharing the algorithm for generating shades of a color.",
+			"title": "Generating shades",
+			"description": "Thanks to Michael Edelstone (creator of maketintsandshades.com) for sharing the algorithm for generating shades of a color.",
 			"url": "https://github.com/edelstone/tints-and-shades"
 		}
 	]
