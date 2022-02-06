@@ -6,15 +6,18 @@ export default function KeyboardShortcuts ({keyboardShortcuts}) {
 		let keyClass = v.keyCode ? "bg-slate-300 px-3 py-2 w-12 text-center" : "py-2";
 
 		return (
-			<div key={i} className="flex bg-slate-200 mb-1 max-w-lg">
-				<div className="w-24 px-4 py-2 font-bold border-r-2 border-slate-300">
-					<div className={keyClass}>
-						{v.keyCode ? v.keyCode : v.keyName}
+			<div key={i}>
+				<div className="flex bg-slate-200 mb-1 max-w-lg">
+					<div className="w-24 px-4 py-2 font-bold border-r-2 border-slate-300">
+						<div className={keyClass}>
+							{v.keyCode ? v.keyCode : v.keyName}
+						</div>
+					</div>
+					<div className="grow px-4 py-4">
+						<div className="font-bold text-slate-600">{v.description}</div>
 					</div>
 				</div>
-				<div className="grow px-4 py-4">
-					<div className="font-bold text-slate-600">{v.description}</div>
-				</div>
+				{v.separator && <div className="h-4"></div>}
 			</div>
 		);
 	});

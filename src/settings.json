@@ -31,19 +31,19 @@
 		{"keyCode": "W", "description": "Decrease Red by 5"},
 		{"keyCode": "E", "description": "Increase Red by 5"},
 		{"keyCode": "R", "description": "Increase Red by 25"},
-		{"keyCode": "T", "description": "Randomize Red"},
+		{"keyCode": "T", "description": "Randomize Red", "separator": true},
 
 		{"keyCode": "A", "description": "Decrease Green by 25"},
 		{"keyCode": "S", "description": "Decrease Green by 5"},
 		{"keyCode": "D", "description": "Increase Green by 5"},
 		{"keyCode": "F", "description": "Increase Green by 25"},
-		{"keyCode": "G", "description": "Randomize Red"},
+		{"keyCode": "G", "description": "Randomize Red", "separator": true},
 
 		{"keyCode": "Z", "description": "Decrease Blue by 25"},
 		{"keyCode": "X", "description": "Decrease Blue by 5"},
 		{"keyCode": "C", "description": "Increase Blue by 5"},
 		{"keyCode": "V", "description": "Increase Blue by 25"},
-		{"keyCode": "B", "description": "Randomize Blue"},
+		{"keyCode": "B", "description": "Randomize Blue", "separator": true},
 
 		{"keyName": "Spacebar", "description": "Randomize RGB"}
 	]
