@@ -1,4 +1,8 @@
 {
+	"meta": {
+		"title": "shades",
+		"tagline": "Just another tints and shades generator"
+	},
 	"links": [
 		{
 			"title": "GitHub",

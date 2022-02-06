@@ -7,13 +7,14 @@ import settings from './settings.json';
 
 function App () {
 	const links = settings.links;
+	let mainProps = {settings};
 	let footerProps = {
 		links
 	};
 
 	return (
 		<div className="App">
-			<MainComponent />
+			<MainComponent {...mainProps} />
 			<Footer {...footerProps} />
 		</div>
 	);
