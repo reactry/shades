@@ -16,10 +16,23 @@ export default function NSelector ({
 		);
 	});
 
+	function handleKeyDown (e) {
+		let keyCode = e.keyCode;
+		if (keyCode === 37) {
+			// left arrow
+			e.preventDefault();
+			if (n > 1) setN(n - 1);
+		} else if (keyCode === 39) {
+			// right arrow
+			e.preventDefault();
+			if (n < maxN) setN(n + 1)
+		}
+	}
+
 	return (
-		<div className="NSelector py-2 px-6">
-			<h4 className="px-2 font-bold text-sm">Select N</h4>
-			<div className="flex py-4 space-x-1">
+		<div className="NSelector py-4 px-6 border-2 border-transparent outline-none focus:border-blue-400" tabIndex="0" onKeyDown={handleKeyDown}>
+			<h4 className="px-1 font-bold text-sm">Select N</h4>
+			<div className="flex py-2 space-x-1">
 				{items}
 			</div>
 		</div>
