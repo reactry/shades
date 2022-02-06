@@ -1,5 +1,7 @@
 import React from 'react';
 
+import BigBox from './BigBox';
+
 import TopTabBar from './TopTabBar';
 import NSelector from './NSelector';
 
@@ -59,14 +61,21 @@ export default function ColorInput ({
 		n, setN, maxN: 15
 	};
 
+	let bigBoxProps = {red, green, blue};
+
 	return (
 		<div className="ColorInput bg-slate-300">
-			<div className="max-w-xl m-auto bg-slate-100">
-				<TopTabBar {...topTabBarProps} />
-				<div className="pt-4">
-					{getCurrentTab()}
+			<div className="md:flex max-w-5xl m-auto">
+				<div className="max-w-xl grow bg-slate-100">
+					<TopTabBar {...topTabBarProps} />
+					<div className="pt-4">
+						{getCurrentTab()}
+					</div>
+					<NSelector {...nSelectorProps} />
 				</div>
-				<NSelector {...nSelectorProps} />
+				<div className="grow">
+					<BigBox {...bigBoxProps} />
+				</div>
 			</div>
 		</div>
 	);
