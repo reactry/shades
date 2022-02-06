@@ -2,8 +2,8 @@ import React from 'react';
 
 import RainbowBorder from './RainbowBorder';
 import Branding from './Branding';
-import ColorInput from './ColorInput';
-import ColorOutput from './ColorOutput';
+import ColorInput from './Input';
+import ColorOutput from './Output';
 
 
 
