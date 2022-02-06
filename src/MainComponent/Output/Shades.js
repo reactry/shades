@@ -6,11 +6,11 @@ export default function Shades ({
 	red, green, blue, n
 }) {
 
-	let colors = [...Array(10).keys()];
+	let colors = [...Array(n).keys()];
 	colors = colors.map((v, i) => {
-		let r = Math.floor(red - (red * i / 10));
-		let g = Math.floor(green - (green * i / 10));
-		let b = Math.floor(blue - (blue * i / 10));
+		let r = Math.floor(red - (red * i / n));
+		let g = Math.floor(green - (green * i / n));
+		let b = Math.floor(blue - (blue * i / n));
 		return {r, g, b};
 	});
 

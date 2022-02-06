@@ -22,7 +22,7 @@ export default function MainComponent ({settings}) {
 
 	let colorInputProps = {
 		red, green, blue, n,
-		setRed, setGreen, setBlue, setN,
+		setRed, setGreen, setBlue, setN
 	};
 	let colorOutputProps = {
 		red, green, blue, n

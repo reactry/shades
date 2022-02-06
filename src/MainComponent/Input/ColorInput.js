@@ -1,6 +1,7 @@
 import React from 'react';
 
 import TopTabBar from './TopTabBar';
+import NSelector from './NSelector';
 
 import HexTab from './HexTab';
 import RGBTab from './RGBTab';
@@ -54,6 +55,10 @@ export default function ColorInput ({
 		}
 	}
 
+	let nSelectorProps = {
+		n, setN, maxN: 15
+	};
+
 	return (
 		<div className="ColorInput bg-slate-300 py-8">
 			<div className="max-w-xl m-auto bg-slate-100">
@@ -61,6 +66,7 @@ export default function ColorInput ({
 				<div className="p-4">
 					{getCurrentTab()}
 				</div>
+				<NSelector {...nSelectorProps} />
 			</div>
 		</div>
 	);

@@ -6,11 +6,11 @@ export default function Tints ({
 	red, green, blue, n
 }) {
 
-	let colors = [...Array(10).keys()];
+	let colors = [...Array(n).keys()];
 	colors = colors.map((v, i) => {
-		let r = Math.floor(red + ((255 - red) * i / 10));
-		let g = Math.floor(green + ((255 - green) * i / 10));
-		let b = Math.floor(blue + ((255 - blue) * i / 10));
+		let r = Math.floor(red + ((255 - red) * i / n));
+		let g = Math.floor(green + ((255 - green) * i / n));
+		let b = Math.floor(blue + ((255 - blue) * i / n));
 		return {r, g, b};
 	});
 
