@@ -3,7 +3,7 @@ import Box from './Box';
 
 
 export default function List ({
-	colors
+	colors, title
 }) {
 
 	let colorItems = colors.map((color, i) => {
@@ -12,7 +12,8 @@ export default function List ({
 	});
 
 	return (
-		<div className="List">
+		<div className="List py-8">
+			<h1 className="text-slate-600 text-3xl px-1 py-2 text-center md:text-left">{title}</h1>
 			<div className="flex flex-wrap">
 				{colorItems}
 			</div>
