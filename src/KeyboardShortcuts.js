@@ -13,7 +13,7 @@ export default function KeyboardShortcuts ({keyboardShortcuts}) {
 					</div>
 				</div>
 				<div className="grow px-4 py-4">
-					<div>{v.description}</div>
+					<div className="font-bold text-slate-600">{v.description}</div>
 				</div>
 			</div>
 		);
