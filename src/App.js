@@ -33,7 +33,7 @@ function App () {
 			<RainbowBorder bgClasses={bgClasses} />
 			<Preferences />
 			<RainbowBorder bgClasses={bgClasses} />
-			<KeyboardShortcuts />
+			<KeyboardShortcuts keyboardShortcuts={settings.keyboardShortcuts} />
 			<RainbowBorder bgClasses={bgClasses} />
 			<Branding meta={settings.meta} />
 			<RainbowBorder bgClasses={bgClasses} />
