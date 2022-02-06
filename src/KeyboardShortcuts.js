@@ -33,7 +33,7 @@ export default function KeyboardShortcuts ({keyboardShortcuts}) {
 						{showShortcuts ? "Hide" : "Show"}</div>
 					<div className="text-3xl pl-5 pt-4">Shortcuts</div>
 				</div>
-				<div className="px-4 py-8">
+				<div className="px-4 pt-8">
 					{showShortcuts && shortcutItems}
 				</div>
 			</div>
