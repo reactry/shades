@@ -41,20 +41,57 @@ export default function ColorInput ({
 
 	let bigBoxProps = {red, green, blue, randomizeColor};
 
-	React.useEffect(() => {
-		function keydownEvent (e) {
-			let keyCode = e.keyCode;
-			if (keyCode === 32) {
-				e.preventDefault();
-				randomizeColor();
-			}
+	function changeX (x, setX, change) {
+		let newX = x + change;
+		if (newX < 0) {
+			setX(0);
+		} else if (newX > 255) {
+			setX(255);
+		} else {
+			setX(newX);
 		}
+	}
+
+	function keydownEvent (e) {
+		let keyCode = e.keyCode;
+		let key = e.key.toUpperCase();
+
+		if (keyCode === 32) {
+			e.preventDefault();
+			randomizeColor();
+			return;
+		}
+
+		switch (key) {
+			case "Q": changeX(red, setRed, -25); break;
+			case "W": changeX(red, setRed, -5); break;
+			case "E": changeX(red, setRed, 5); break;
+			case "R": changeX(red, setRed, 25); break;
+
+			case "A": changeX(green, setGreen, -25); break;
+			case "S": changeX(green, setGreen, -5); break;
+			case "D": changeX(green, setGreen, 5); break;
+			case "F": changeX(green, setGreen, 25); break;
+
+			case "Z": changeX(blue, setBlue, -25); break;
+			case "X": changeX(blue, setBlue, -5); break;
+			case "C": changeX(blue, setBlue, 5); break;
+			case "V": changeX(blue, setBlue, 25); break;
+
+			default: break;
+		}
+	}
+
+	React.useEffect(() => {
 		document.addEventListener('keydown', keydownEvent, false);
 
 		return function cleanUp () {
 			document.removeEventListener('keydown', keydownEvent, false);
 		}
-	}, []);
+	}, [
+		red, green, blue,
+		setRed, setGreen, setBlue
+	]);
 
 	function getCurrentTab () {
 		let currentTabTitle = tabs[currentTabIndex].title;
