@@ -58,7 +58,7 @@ export default function RGBTab ({
 				</div>
 			</div>
 
-			<div className="py-4">
+			<div className="pt-4">
 				<NumberSlider {...redSliderProps} />
 				<NumberSlider {...greenSliderProps} />
 				<NumberSlider {...blueSliderProps} />

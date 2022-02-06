@@ -1,3 +1,4 @@
+import {roundOffComponent} from '../../Utils';
 
 
 
@@ -7,7 +8,12 @@ export default function NumberSlider ({
 }) {
 
 	function handleClick (e) {
-		//
+		let percent = (e.pageX - e.currentTarget.offsetLeft) * 100 / (e.currentTarget.offsetWidth);
+		percent = percent.toFixed(2);
+		let newX = roundOffComponent(Math.floor(percent * max / 100));
+		if (newX !== x) {
+			setX(newX);
+		}
 	}
 
 	function handleKeyDown (e) {

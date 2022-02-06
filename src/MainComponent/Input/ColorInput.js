@@ -63,7 +63,7 @@ export default function ColorInput ({
 		<div className="ColorInput bg-slate-300">
 			<div className="max-w-xl m-auto bg-slate-100">
 				<TopTabBar {...topTabBarProps} />
-				<div className="py-4">
+				<div className="pt-4">
 					{getCurrentTab()}
 				</div>
 				<NSelector {...nSelectorProps} />
