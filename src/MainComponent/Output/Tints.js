@@ -15,8 +15,8 @@ export default function Tints ({
 	});
 
 	return (
-		<div className="Tints">
-			<h1 className="text-slate-600 text-lg">Tints</h1>
+		<div className="Tints py-4">
+			<h1 className="text-slate-600 text-lg px-1">Tints</h1>
 			<List colors={colors} />
 		</div>
 	);

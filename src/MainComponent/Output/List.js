@@ -12,7 +12,7 @@ export default function List ({
 	});
 
 	return (
-		<div className="List py-4">
+		<div className="List">
 			<div className="flex flex-wrap">
 				{colorItems}
 			</div>

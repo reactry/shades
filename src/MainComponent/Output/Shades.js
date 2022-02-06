@@ -15,8 +15,8 @@ export default function Shades ({
 	});
 
 	return (
-		<div className="Shades">
-			<h1 className="text-slate-600 text-lg">Shades</h1>
+		<div className="Shades py-4">
+			<h1 className="text-slate-600 text-lg px-1">Shades</h1>
 			<List colors={colors} />
 		</div>
 	);

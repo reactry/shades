@@ -10,8 +10,8 @@ export default function NSelector ({
 		let innerClass = "cursor-pointer h-6 ";
 		innerClass += (i < n) ? "bg-red-500" : "bg-slate-300";
 		return (
-			<div className="grow">
-				<div key={i} className={innerClass} onClick={() => setN(i+1)}></div>
+			<div key={i} className="grow">
+				<div className={innerClass} onClick={() => setN(i+1)}></div>
 			</div>
 		);
 	});
@@ -30,7 +30,7 @@ export default function NSelector ({
 	}
 
 	return (
-		<div className="NSelector py-4 px-6 border-2 border-transparent outline-none focus:border-blue-400" tabIndex="0" onKeyDown={handleKeyDown}>
+		<div className="NSelector py-4 px-4 border-2 border-transparent outline-none focus:border-blue-400" tabIndex="0" onKeyDown={handleKeyDown}>
 			<h4 className="px-1 font-bold text-sm">Select N</h4>
 			<div className="flex py-2 space-x-1">
 				{items}
