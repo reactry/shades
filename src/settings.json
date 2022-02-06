@@ -24,5 +24,27 @@
 			"description": "Thanks to Michael Edelstone (creator of maketintsandshades.com) for sharing the algorithm for generating shades of a color.",
 			"url": "https://github.com/edelstone/tints-and-shades"
 		}
+	],
+
+	"keyboardShortcuts": [
+		{"keyCode": "Q", "description": "Decrease Red by 20%"},
+		{"keyCode": "W", "description": "Decrease Red by 5%"},
+		{"keyCode": "E", "description": "Increase Red by 5%"},
+		{"keyCode": "R", "description": "Increase Red by 20%"},
+		{"keyCode": "T", "description": "Randomize Red"},
+
+		{"keyCode": "A", "description": "Decrease Green by 20%"},
+		{"keyCode": "S", "description": "Decrease Green by 5%"},
+		{"keyCode": "D", "description": "Increase Green by 5%"},
+		{"keyCode": "F", "description": "Increase Green by 20%"},
+		{"keyCode": "G", "description": "Randomize Red"},
+
+		{"keyCode": "Z", "description": "Decrease Blue by 20%"},
+		{"keyCode": "X", "description": "Decrease Blue by 5%"},
+		{"keyCode": "C", "description": "Increase Blue by 5%"},
+		{"keyCode": "V", "description": "Increase Blue by 20%"},
+		{"keyCode": "B", "description": "Randomize Blue"},
+
+		{"keyName": "Spacebar", "description": "Randomize RGB"}
 	]
 }
