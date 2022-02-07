@@ -130,7 +130,7 @@ export default function ColorInput ({
 	};
 
 	return (
-		<div className="ColorInput bg-slate-300">
+		<div className="ColorInput bg-slate-300 pb-12">
 			<div className="md:flex max-w-5xl m-auto">
 				<div className="grow bg-slate-100">
 					<TopTabBar {...topTabBarProps} />
