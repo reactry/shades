@@ -38,27 +38,26 @@ export default function ColorInput ({
 	function randomizeGreen () {setGreen(Math.floor(Math.random() * 255));}
 	function randomizeBlue () {setBlue(Math.floor(Math.random() * 255));}
 
+	function transformColor (t) {
+		setRed(t(red));
+		setGreen(t(green));
+		setBlue(t(blue));
+	}
+
 	function darkenColor () {
-		setRed(darken(red));
-		setGreen(darken(green));
-		setBlue(darken(blue));
+		transformColor(darken);
 	}
 
 	function lightenColor () {
-		setRed(lighten(red));
-		setGreen(lighten(green));
-		setBlue(lighten(blue));
+		transformColor(lighten);
 	}
 
 	function invertColor () {
-		setRed(255 - red); setGreen(255 - green); setBlue(255 - blue);
+		transformColor((x) => (255 - x));
 	}
 
 	function randomizeColor () {
-		let r = Math.floor(Math.random() * 255);
-		let g = Math.floor(Math.random() * 255);
-		let b = Math.floor(Math.random() * 255);
-		setRed(r); setGreen(g); setBlue(b);
+		transformColor((x) => Math.floor(Math.random() * 255));
 	}
 
 	let bigBoxProps = {
