@@ -12,12 +12,14 @@ export default function MainComponent ({settings}) {
 
 	const [n, setN] = React.useState(6);
 
+	const shadeNames = settings.shadeNames;
+
 	let colorInputProps = {
 		red, green, blue, n,
 		setRed, setGreen, setBlue, setN
 	};
 	let colorOutputProps = {
-		red, green, blue, n
+		red, green, blue, n, shadeNames
 	};
 
 	return (

@@ -22,7 +22,7 @@ const outputTabs = [
 
 
 export default function ColorOutput ({
-	red, green, blue, n
+	red, green, blue, n, shadeNames
 }) {
 
 	const [currentTabIndex, setCurrentTabIndex] = React.useState(2);
@@ -31,7 +31,11 @@ export default function ColorOutput ({
 		currentTabIndex, setCurrentTabIndex
 	};
 
-	let colors = getTintsAndShades(red, green, blue, n);
+	let rgbColors = getTintsAndShades(red, green, blue, n);
+	let colorNames = shadeNames[rgbColors.length];
+	let colors = rgbColors.map((v, i) => {
+		return {...v, "name": colorNames[i]};
+	});
 
 	function getCurrentOutputTab () {
 		let currentTabTitle = outputTabs[currentTabIndex].title;

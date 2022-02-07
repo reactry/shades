@@ -4,12 +4,17 @@ import Toggle from '../../Toggle';
 
 
 
-export default function DownloadTab () {
-	let [cssBg, setCssBg] = React.useState(true);
-	let [cssFg, setCssFg] = React.useState(true);
-	let [cssOutline, setCssOutline] = React.useState(true);
-	let [cssBorder, setCssBorder] = React.useState(true);
-	let [cssBorderSides, setCssBorderSides] = React.useState(false);
+export default function DownloadTab ({
+	colors, n
+}) {
+
+	const [cssBg, setCssBg] = React.useState(true);
+	const [cssFg, setCssFg] = React.useState(true);
+	const [cssOutline, setCssOutline] = React.useState(true);
+	const [cssBorder, setCssBorder] = React.useState(true);
+	const [cssBorderSides, setCssBorderSides] = React.useState(false);
+
+	//
 
 	return (
 		<div className="DownloadTab py-6">
