@@ -3,11 +3,14 @@ import Box from './Box';
 
 
 export default function List ({
-	colors, title
+	colors, title, currentColorIndex
 }) {
 
 	let colorItems = colors.map((color, i) => {
-		let props = {...color};
+		let props = {
+			...color,
+			active: (i === currentColorIndex)
+		};
 		return <Box key={i} {...props} />;
 	});
 

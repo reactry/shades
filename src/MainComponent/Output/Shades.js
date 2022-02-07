@@ -12,7 +12,7 @@ export default function Shades ({
 
 	return (
 		<div className="Shades">
-			<List colors={colors} title="Shades" />
+			<List colors={colors} title="Shades" currentColorIndex={0} />
 		</div>
 	);
 }
