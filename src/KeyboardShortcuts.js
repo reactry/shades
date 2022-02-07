@@ -5,7 +5,7 @@ import BigButton from './BigButton';
 
 
 export default function KeyboardShortcuts ({keyboardShortcuts}) {
-	let [showShortcuts, setShowShortcuts] = React.useState(false);
+	const [showShortcuts, setShowShortcuts] = React.useState(false);
 
 	let shortcutItems = keyboardShortcuts.map((v, i) => {
 		let keyClass = v.keyCode ? "bg-slate-300 px-3 py-2 w-12 text-center" : "py-2";

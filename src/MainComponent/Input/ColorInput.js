@@ -29,7 +29,8 @@ export default function ColorInput ({
 	red, green, blue, n,
 	setRed, setGreen, setBlue, setN
 }) {
-	let [currentTabIndex, setCurrentTabIndex] = React.useState(1);
+
+	const [currentTabIndex, setCurrentTabIndex] = React.useState(1);
 	let topTabBarProps = {
 		tabs, currentTabIndex, setCurrentTabIndex
 	};

@@ -5,7 +5,7 @@ import BigButton from './BigButton';
 
 
 export default function Preferences () {
-	let [showPreferences, setShowPreferences] = React.useState(false);
+	const [showPreferences, setShowPreferences] = React.useState(false);
 
 	return (
 		<div className="Preferences px-4 py-24 bg-slate-700 text-slate-200">
