@@ -9,6 +9,8 @@ import HexTab from './HexTab';
 import RGBTab from './RGBTab';
 import HSLTab from './HSLTab';
 
+import {darken, lighten} from '../../Utils';
+
 const tabs = [
 	{
 		"title": "Hex"
@@ -36,6 +38,18 @@ export default function ColorInput ({
 	function randomizeGreen () {setGreen(Math.floor(Math.random() * 255));}
 	function randomizeBlue () {setBlue(Math.floor(Math.random() * 255));}
 
+	function darkenColor () {
+		setRed(darken(red));
+		setGreen(darken(green));
+		setBlue(darken(blue));
+	}
+
+	function lightenColor () {
+		setRed(lighten(red));
+		setGreen(lighten(green));
+		setBlue(lighten(blue));
+	}
+
 	function invertColor () {
 		setRed(255 - red); setGreen(255 - green); setBlue(255 - blue);
 	}
@@ -47,7 +61,11 @@ export default function ColorInput ({
 		setRed(r); setGreen(g); setBlue(b);
 	}
 
-	let bigBoxProps = {red, green, blue, invertColor, randomizeColor};
+	let bigBoxProps = {
+		red, green, blue,
+		darkenColor, lightenColor,
+		invertColor, randomizeColor
+	};
 
 	function changeX (x, setX, change) {
 		let newX = x + change;

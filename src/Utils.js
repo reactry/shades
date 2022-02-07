@@ -46,3 +46,18 @@ export function getTintsAndShades (red, green, blue, n) {
 }
 
 
+
+export function darken (x) {
+	return Math.floor(x * 0.9);
+}
+
+export function lighten (x) {
+	if (x < 20) {
+		return (x + 2)
+	} else {
+		let y = Math.floor(x * 1.1);
+		return (y < 255) ? y : 255;
+	}
+}
+
+
