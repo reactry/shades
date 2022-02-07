@@ -1,8 +1,13 @@
 import React from 'react';
 
+import BigButton from '../../BigButton';
 import Toggle from '../../Toggle';
 
 
+
+function DownloadHeading (props) {
+	return <h2 className="pt-12 pl-4 text-xl font-bold">{props.children}</h2>;
+}
 
 export default function DownloadTab ({
 	colors, n
@@ -13,6 +18,38 @@ export default function DownloadTab ({
 	const [cssOutline, setCssOutline] = React.useState(true);
 	const [cssBorder, setCssBorder] = React.useState(true);
 	const [cssBorderSides, setCssBorderSides] = React.useState(false);
+
+	const preTag = React.useRef(null);
+
+	function copyCss (e) {
+		navigator.clipboard.writeText(preTag.current.innerHTML)
+	}
+
+	function downloadCss (e) {
+		const outputTextArea = document.querySelector("textarea[name='outputJSON']");
+		let cssText = preTag.current.innerHTML;
+		let filename = "reactry.css";
+
+		let textFileAsBlob = new Blob([cssText], {type:'text/plain'});
+		let downloadLink = document.createElement("a");
+		downloadLink.download = filename;
+		downloadLink.innerHTML = "Download CSS";
+
+		function destroyClickedElement (event) {
+			document.body.removeChild(event.target);
+		}
+
+		if (window.webkitURL != null) {
+			downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+		} else {
+			downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+			downloadLink.onclick = destroyClickedElement;
+			downloadLink.style.display = "none";
+			document.body.appendChild(downloadLink);
+		}
+
+		downloadLink.click();
+	}
 
 	let numberOfClasses = 0;
 	let cssCode = colors.map((v, i) => {
@@ -67,9 +104,9 @@ export default function DownloadTab ({
 	}
 
 	return (
-		<div className="DownloadTab py-6">
-			<h2 className="text-slate-600 text-3xl px-4 pt-8 hidden">Download</h2>
-			<div className="py-6 gap-x-2 gap-y-2 flex flex-wrap">
+		<div className="DownloadTab pb-6">
+			<DownloadHeading>Select what you need?</DownloadHeading>
+			<div className="py-4 gap-x-2 gap-y-2 flex flex-wrap">
 				<Toggle title="Background" x={cssBg} setX={setCssBg} />
 				<Toggle title="Text" x={cssFg} setX={setCssFg} />
 				<Toggle title="Outline" x={cssOutline} setX={setCssOutline} />
@@ -77,9 +114,17 @@ export default function DownloadTab ({
 				<Toggle title="Border Sides" x={cssBorderSides} setX={setCssBorderSides} />
 			</div>
 			<div>
+				<DownloadHeading>CSS Stats</DownloadHeading>
 				{getSummary()}
+
+				<DownloadHeading>Output</DownloadHeading>
+				<div className="py-4">
+					<BigButton title="Copy" handleClick={copyCss} />
+					<BigButton title="Download" handleClick={downloadCss} />
+				</div>
+
 				<div className="px-4 py-4 bg-slate-300 text-blue-900 leading-8 max-h-screen overflow-y-scroll">
-					<pre>{cssCode}</pre>
+					<pre ref={preTag}>{cssCode}</pre>
 				</div>
 			</div>
 		</div>
