@@ -19,6 +19,8 @@ export default function DownloadTab ({
 	const [cssBorder, setCssBorder] = React.useState(true);
 	const [cssBorderSides, setCssBorderSides] = React.useState(false);
 
+	const [colorName, setColorName] = React.useState("reactry");
+
 	const preTag = React.useRef(null);
 
 	function copyCss (e) {
@@ -53,7 +55,7 @@ export default function DownloadTab ({
 
 	let numberOfClasses = 0;
 	let cssCode = colors.map((v, i) => {
-		let name = v.name;
+		let name = colorName + "-" + v.shade;
 		let hex = v.hex;
 		let cssCodeLine = "";
 		if (cssBg) {
@@ -105,6 +107,12 @@ export default function DownloadTab ({
 
 	return (
 		<div className="DownloadTab pb-6">
+			<DownloadHeading>Set color name</DownloadHeading>
+			<div className="px-2 py-2">
+				<input type="text" className="px-2 py-2 text-base bg-slate-100 border-2 border-slate-400 outline-none focus:border-blue-500"
+					value={colorName} onChange={(e) => setColorName(e.target.value.trim())} />
+			</div>
+
 			<DownloadHeading>Select what you need?</DownloadHeading>
 			<div className="py-4 gap-x-2 gap-y-2 flex flex-wrap">
 				<Toggle title="Background" x={cssBg} setX={setCssBg} />

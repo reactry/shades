@@ -29,7 +29,7 @@ export default function HexTab ({}) {
 					<div className="px-5 py-4">#</div>
 				</div>
 				<div>
-					<input type="text" onChange={handleHexInputChange} maxlength="6"
+					<input type="text" onChange={handleHexInputChange} maxLength="6"
 						className="w-64 bg-slate-200 border-2 border-slate-300 w-inherit outline-none focus:border-blue-600 px-4 py-2" />
 					<div className="py-4 text-sm font-bold flex">
 						{error ? <div className="px-4 py-1 bg-red-300">BAD</div> : <div className="px-4 py-1 bg-green-300">GOOD</div>}

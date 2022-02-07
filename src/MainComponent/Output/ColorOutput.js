@@ -35,7 +35,7 @@ export default function ColorOutput ({
 	let colorNames = shadeNames[rgbColors.length];
 	let colors = rgbColors.map((v, i) => {
 		return {
-			"name": colorNames[i],
+			"shade": colorNames[i],
 			"hex": rgbToHex(v.r, v.g, v.b),
 			...v
 		};
