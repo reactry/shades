@@ -36,6 +36,10 @@ export default function ColorInput ({
 	function randomizeGreen () {setGreen(Math.floor(Math.random() * 255));}
 	function randomizeBlue () {setBlue(Math.floor(Math.random() * 255));}
 
+	function invertColor () {
+		setRed(255 - red); setGreen(255 - green); setBlue(255 - blue);
+	}
+
 	function randomizeColor () {
 		let r = Math.floor(Math.random() * 255);
 		let g = Math.floor(Math.random() * 255);
@@ -43,7 +47,7 @@ export default function ColorInput ({
 		setRed(r); setGreen(g); setBlue(b);
 	}
 
-	let bigBoxProps = {red, green, blue, randomizeColor};
+	let bigBoxProps = {red, green, blue, invertColor, randomizeColor};
 
 	function changeX (x, setX, change) {
 		let newX = x + change;

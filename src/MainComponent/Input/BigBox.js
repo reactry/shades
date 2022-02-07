@@ -5,7 +5,8 @@ import BigButton from '../../BigButton';
 
 
 export default function BigBox ({
-	red, green, blue, randomizeColor
+	red, green, blue,
+	invertColor, randomizeColor
 }) {
 
 	let hex = rgbToHex(red, green, blue);
@@ -20,6 +21,7 @@ export default function BigBox ({
 				<div className="bg-slate-100 px-4 py-4 text-slate-700 font-bold text-xl">{hex}</div>
 			</div>
 			<div className="pt-8 flex">
+				<BigButton title="Invert" handleClick={invertColor} />
 				<BigButton title="Randomize" handleClick={randomizeColor} />
 			</div>
 		</div>
