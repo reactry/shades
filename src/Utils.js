@@ -1,5 +1,7 @@
 
-function roundOffComponent (c) {
+
+
+export function roundOffComponent (c) {
 	if (c < 0) return 0;
 	if (c > 255) return 255;
 	return c;
@@ -10,11 +12,11 @@ function componentToHex (c) {
 	return (hex.length === 1) ? "0" + hex : hex;
 }
 
-function rgbToHex (r, g, b) {
+export function rgbToHex (r, g, b) {
 	return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 
-function getTints (red, green, blue, n) {
+export function getTints (red, green, blue, n) {
 	let colors = [...Array(n).keys()];
 	colors = colors.map((v, i) => {
 		let r = Math.floor(red + ((255 - red) * i / n));
@@ -25,7 +27,7 @@ function getTints (red, green, blue, n) {
 	return colors;
 }
 
-function getShades (red, green, blue, n) {
+export function getShades (red, green, blue, n) {
 	let colors = [...Array(n).keys()];
 	colors = colors.map((v, i) => {
 		let r = Math.floor(red - (red * i / n));
@@ -36,17 +38,11 @@ function getShades (red, green, blue, n) {
 	return colors;
 }
 
-function getTintsAndShades (red, green, blue, n) {
+export function getTintsAndShades (red, green, blue, n) {
 	let tints = getTints(red, green, blue, n).reverse();
 	tints.pop();
 	let shades = getShades(red, green, blue, n);
 	return [...tints, ...shades];
 }
 
-module.exports = {
-	roundOffComponent,
-	rgbToHex,
-	getTints,
-	getShades,
-	getTintsAndShades
-};
+
