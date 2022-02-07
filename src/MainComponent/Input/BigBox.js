@@ -1,5 +1,8 @@
 import {rgbToHex} from '../../Utils';
 
+import BigButton from '../../BigButton';
+
+
 
 export default function BigBox ({
 	red, green, blue, randomizeColor
@@ -16,8 +19,8 @@ export default function BigBox ({
 				<div className="h-40 md:h-56" style={style}></div>
 				<div className="bg-slate-100 px-4 py-4 text-slate-700 font-bold text-md">{hex}</div>
 			</div>
-			<div className="pt-8 text-center flex">
-				<button onClick={randomizeColor} className="bg-slate-200 px-8 py-5 text-xl border-2 border-slate-400 text-slate-700 rounded hover:bg-slate-100 focus:bg-slate-100">Randomize</button>
+			<div className="pt-8 flex">
+				<BigButton title="Randomize" handleClick={randomizeColor} />
 			</div>
 		</div>
 	);

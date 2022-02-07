@@ -1,5 +1,7 @@
 import React from 'react';
 
+import BigButton from './BigButton';
+
 
 
 export default function KeyboardShortcuts ({keyboardShortcuts}) {
@@ -28,9 +30,7 @@ export default function KeyboardShortcuts ({keyboardShortcuts}) {
 		<div className="KeyboardShortcuts bg-slate-300 text-slate-700 px-4 py-24">
 			<div className="max-w-5xl m-auto">
 				<div className="px-4 py-8 flex">
-					<div onClick={() => setShowShortcuts(!showShortcuts)}
-						className="bg-slate-200 px-3 py-4 w-32 text-center text-xl border-2 border-slate-400 cursor-pointer text-slate-700 rounded hover:bg-slate-100 focus:bg-slate-100">
-						{showShortcuts ? "Hide" : "Show"}</div>
+					<BigButton title={showShortcuts ? "Hide" : "Show"} handleClick={() => setShowShortcuts(!showShortcuts)} />
 					<div className="text-3xl pl-5 pt-4">Shortcuts</div>
 				</div>
 				<div className="px-4 pt-8">

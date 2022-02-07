@@ -1,5 +1,7 @@
 import React from 'react';
 
+import BigButton from './BigButton';
+
 
 
 export default function Preferences () {
@@ -9,9 +11,7 @@ export default function Preferences () {
 		<div className="Preferences px-4 py-24 bg-slate-700 text-slate-200">
 			<div className="max-w-5xl m-auto">
 				<div className="px-4 py-8 flex">
-					<div onClick={() => setShowPreferences(!showPreferences)}
-						className="bg-slate-200 px-3 py-4 w-32 text-center text-xl border-2 border-slate-400 cursor-pointer text-slate-700 rounded hover:bg-slate-100 focus:bg-slate-100">
-						{showPreferences ? "Hide" : "Show"}</div>
+					<BigButton title={showPreferences ? "Hide" : "Show"} handleClick={() => setShowPreferences(!showPreferences)} />
 					<div className="text-3xl pl-5 pt-4">Preferences</div>
 				</div>
 				{showPreferences && <div>
