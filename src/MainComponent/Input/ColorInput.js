@@ -126,7 +126,7 @@ export default function ColorInput ({
 	}
 
 	let nSelectorProps = {
-		n, setN, maxN: 15
+		n, setN, maxN: 16
 	};
 
 	return (

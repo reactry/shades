@@ -10,7 +10,7 @@ export default function MainComponent ({settings}) {
 	let [green, setGreen] = React.useState(70);
 	let [blue, setBlue] = React.useState(230);
 
-	let [n, setN] = React.useState(10);
+	let [n, setN] = React.useState(6);
 
 	let colorInputProps = {
 		red, green, blue, n,
