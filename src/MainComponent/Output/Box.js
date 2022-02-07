@@ -7,7 +7,7 @@ export default function Box ({r, g, b, hex, shade, active}) {
 	};
 
 	let boxClasses = "Box w-28 mr-3 my-2 border-4";
-	if (active) boxClasses += " border-blue-800"
+	if (active) boxClasses += " border-blue-800";
 
 	return (
 		<div className={boxClasses}>

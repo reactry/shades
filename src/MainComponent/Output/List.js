@@ -1,4 +1,5 @@
 import Box from './Box';
+import Row from './Row';
 
 
 
@@ -6,12 +7,20 @@ export default function List ({
 	colors, length, title, currentColorIndex
 }) {
 
-	let colorItems = colors.map((color, i) => {
+	let colorBoxItems = colors.map((color, i) => {
 		let props = {
 			...color,
 			active: (i === currentColorIndex)
 		};
 		return <Box key={i} {...props} />;
+	});
+
+	let colorRowItems = colors.map((color, i) => {
+		let props = {
+			...color,
+			active: (i === currentColorIndex)
+		};
+		return <Row key={i} {...props} />;
 	});
 
 	return (
@@ -20,8 +29,15 @@ export default function List ({
 				<span className="px-4 py-2 bg-slate-600 text-white">{length ? length : colors.length}</span>
 				<span className="px-3">{title}</span>
 			</h1>
-			<div className="flex flex-wrap m-auto">
-				{colorItems}
+			<div className="md:flex align-top items-start">
+				<div className="py-2">
+					<div className="border-2 border-slate-600">
+						{colorRowItems}
+					</div>
+				</div>
+				<div className="flex flex-wrap mx-auto md:pl-4">
+					{colorBoxItems}
+				</div>
 			</div>
 		</div>
 	);

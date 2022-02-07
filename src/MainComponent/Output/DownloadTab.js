@@ -28,7 +28,6 @@ export default function DownloadTab ({
 	}
 
 	function downloadCss (e) {
-		const outputTextArea = document.querySelector("textarea[name='outputJSON']");
 		let cssText = preTag.current.innerHTML;
 		let filename = "reactry.css";
 
