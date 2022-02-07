@@ -1,4 +1,3 @@
-import {rgbToHex} from '../../Utils';
 
 
 

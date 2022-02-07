@@ -1,5 +1,3 @@
-import {getShades} from '../../Utils';
-
 import List from './List';
 
 

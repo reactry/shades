@@ -1,5 +1,3 @@
-import {getTintsAndShades} from '../../Utils';
-
 import List from './List';
 
 
