@@ -24,7 +24,7 @@ export default function HexTab ({}) {
 
 	return (
 		<div className="HexTab">
-			<div className="flex text-6xl text-slate-800 px-4 py-4 justify-center">
+			<div className="flex text-6xl text-slate-800 px-4 py-4 justify-center hidden">
 				<div>
 					<div className="px-5 py-4">#</div>
 				</div>
