@@ -27,7 +27,7 @@
 	],
 
 	"shadeNames": {
-		"1": [""],
+		"1": ["base"],
 		"3": ["light", "base", "dark"],
 		"5": ["lighter", "light", "base", "dark", "darker"],
 		"7": ["lightest", "lighter", "light", "base", "dark", "darker", "darkest"],

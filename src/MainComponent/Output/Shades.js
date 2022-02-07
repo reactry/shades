@@ -5,10 +5,8 @@ import List from './List';
 
 
 export default function Shades ({
-	red, green, blue, n
+	colors, n
 }) {
-
-	let colors = getShades(red, green, blue, n);
 
 	return (
 		<div className="Shades">

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import {getTintsAndShades} from '../../Utils';
 import TintsAndShades from './TintsAndShades';
 import Tints from './Tints';
 import Shades from './Shades';
@@ -30,27 +31,27 @@ export default function ColorOutput ({
 		currentTabIndex, setCurrentTabIndex
 	};
 
-	let props = {red, green, blue, n};
+	let colors = getTintsAndShades(red, green, blue, n);
 
 	function getCurrentOutputTab () {
 		let currentTabTitle = outputTabs[currentTabIndex].title;
 		if (currentTabTitle === "Single") {
 			return (
 				<div>
-					<TintsAndShades {...props} />
+					<TintsAndShades colors={colors} n={n} />
 				</div>
 			);
 		} else if (currentTabTitle === "Multi") {
 			return (
 				<div>
-					<Tints {...props} />
-					<Shades {...props} />
+					<Tints colors={colors.slice(0, n).reverse()} n={n} />
+					<Shades colors={colors.slice(-n)} n={n} />
 				</div>
 			);
 		} else if (currentTabTitle === "Downloads") {
 			return (
 				<div>
-					<DownloadTab {...props} />
+					<DownloadTab colors={colors} />
 				</div>
 			);
 		}
