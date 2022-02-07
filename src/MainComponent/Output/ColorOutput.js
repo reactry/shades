@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {getTintsAndShades} from '../../Utils';
+import {rgbToHex, getTintsAndShades} from '../../Utils';
 import TintsAndShades from './TintsAndShades';
 import Tints from './Tints';
 import Shades from './Shades';
@@ -34,7 +34,11 @@ export default function ColorOutput ({
 	let rgbColors = getTintsAndShades(red, green, blue, n);
 	let colorNames = shadeNames[rgbColors.length];
 	let colors = rgbColors.map((v, i) => {
-		return {...v, "name": colorNames[i]};
+		return {
+			"name": colorNames[i],
+			"hex": rgbToHex(v.r, v.g, v.b),
+			...v
+		};
 	});
 
 	function getCurrentOutputTab () {
