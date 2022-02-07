@@ -41,7 +41,7 @@ export default function RGBTab ({
 	};
 
 	return (
-		<div className="RGBTab">
+		<div className="RGBTab select-none">
 
 			<div className="flex text-center font-bold text-slate-700 px-4 space-x-1 md:space-x-4">
 				<div className="grow pt-4 pb-2 bg-red-200 basis-0">

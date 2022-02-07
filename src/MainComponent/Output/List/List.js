@@ -31,7 +31,7 @@ export default function List ({
 			</h1>
 			<div className="md:flex align-top items-start">
 				<div className="py-2">
-					<div className="border-2 border-slate-600">
+					<div className="border-2 border-slate-400">
 						{colorRowItems}
 					</div>
 				</div>

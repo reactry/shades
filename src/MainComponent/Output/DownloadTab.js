@@ -83,7 +83,7 @@ export default function DownloadTab ({
 	}).join("\n\n");
 
 	function getSummary () {
-		let boxClass = "px-3 py-3 bg-slate-50 w-24 mr-1 grow";
+		let boxClass = "px-3 py-3 bg-slate-50 w-24 mr-1 grow select-none";
 		let bigClasses = "text-4xl py-3";
 		let smallClasses = "text-sm";
 		return (

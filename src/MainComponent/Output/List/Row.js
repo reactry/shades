@@ -6,8 +6,8 @@ export default function Row ({r, g, b, hex, shade, active}) {
 		backgroundColor: hex
 	};
 
-	let rowClasses = "md:w-64 px-4 py-2 font-bold flex border-y-2 border-transparent";
-	if (active) rowClasses += " border-slate-600";
+	let rowClasses = "md:w-64 px-4 py-2 font-bold flex border-y-2";
+	rowClasses +=  active ? " border-slate-400" : " border-transparent";
 
 	return (
 		<div className={rowClasses} style={style}>

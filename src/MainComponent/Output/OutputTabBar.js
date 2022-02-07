@@ -16,7 +16,7 @@ export default function OutputTabBar ({
 	});
 
 	return (
-		<div className="OutputTabBar overflow-hidden">
+		<div className="OutputTabBar overflow-hidden select-none">
 			<div className="bg-slate-300 border-b-2 border-slate-600">
 				<div className="flex max-w-5xl mx-auto text-center text-base font-bold pl-2">
 					{tabItems}

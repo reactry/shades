@@ -16,7 +16,7 @@ export default function TopTabBar ({
 	});
 
 	return (
-		<div className="TopTabBar">
+		<div className="TopTabBar select-none">
 			<div className="flex text-center text-sm font-bold bg-slate-300">
 				{tabItems}
 			</div>
