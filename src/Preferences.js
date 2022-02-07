@@ -12,7 +12,7 @@ export default function Preferences () {
 			<div className="max-w-5xl m-auto">
 				<div className="px-4 py-8 flex">
 					<BigButton title={showPreferences ? "Hide" : "Show"} handleClick={() => setShowPreferences(!showPreferences)} />
-					<div className="text-3xl pl-5 pt-4">Preferences</div>
+					<div className="text-3xl pl-5 pt-3">Preferences</div>
 				</div>
 				{showPreferences && <div>
 					<div className="px-4 pt-8">
