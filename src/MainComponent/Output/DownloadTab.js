@@ -12,9 +12,9 @@ export default function DownloadTab () {
 	let [cssBorderSides, setCssBorderSides] = React.useState(false);
 
 	return (
-		<div className="DownloadTab py-12">
-			<h2 className="text-slate-600 text-3xl px-2 pt-2">Download Tab</h2>
-			<div className="py-8 space-x-2 flex">
+		<div className="DownloadTab py-6">
+			<h2 className="text-slate-600 text-3xl px-4 pt-8 hidden">Download</h2>
+			<div className="py-6 gap-x-2 gap-y-2 flex flex-wrap">
 				<Toggle title="Background" x={cssBg} setX={setCssBg} />
 				<Toggle title="Text" x={cssFg} setX={setCssFg} />
 				<Toggle title="Outline" x={cssOutline} setX={setCssOutline} />
