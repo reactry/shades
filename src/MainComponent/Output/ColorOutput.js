@@ -4,6 +4,7 @@ import TintsAndShades from './TintsAndShades';
 import Tints from './Tints';
 import Shades from './Shades';
 import OutputTabBar from './OutputTabBar';
+import DownloadTab from './DownloadTab';
 
 const outputTabs = [
 	{
@@ -11,6 +12,9 @@ const outputTabs = [
 	},
 	{
 		"title": "Multi"
+	},
+	{
+		"title": "Downloads"
 	}
 ];
 
@@ -41,6 +45,12 @@ export default function ColorOutput ({
 				<div>
 					<Tints {...props} />
 					<Shades {...props} />
+				</div>
+			);
+		} else if (currentTabTitle === "Downloads") {
+			return (
+				<div>
+					<DownloadTab {...props} />
 				</div>
 			);
 		}
