@@ -24,7 +24,7 @@ export default function ColorOutput ({
 	red, green, blue, n
 }) {
 
-	const [currentTabIndex, setCurrentTabIndex] = React.useState(1);
+	const [currentTabIndex, setCurrentTabIndex] = React.useState(2);
 	let outputTabBarProps = {
 		tabs: outputTabs,
 		currentTabIndex, setCurrentTabIndex
