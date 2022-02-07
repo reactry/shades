@@ -59,7 +59,7 @@ export default function ColorOutput ({
 		} else if (currentTabTitle === "Downloads") {
 			return (
 				<div>
-					<DownloadTab colors={colors} />
+					<DownloadTab colors={colors} n={n} />
 				</div>
 			);
 		}
