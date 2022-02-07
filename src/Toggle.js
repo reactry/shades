@@ -16,7 +16,7 @@ export default function Toggle ({
 	}
 
 	return (
-		<div className="select-none px-3 py-3 w-30 bg-slate-50 border-2 cursor-pointer outline-none duration-300 shadow hover:border-blue-500 focus:border-blue-500"
+		<div className="select-none px-3 py-3 w-30 overflow-hidden bg-slate-50 border-2 cursor-pointer outline-none duration-300 shadow hover:border-blue-500 focus:border-blue-500"
 			onClick={() => setX(!x)} tabIndex="0" onKeyDown={handleKeyPress}>
 			<div className="px-3 py-5 rounded-md">
 				<div className="bg-gray-400 w-12 h-3 rounded-full">
