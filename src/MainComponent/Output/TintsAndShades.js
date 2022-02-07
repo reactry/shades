@@ -12,7 +12,7 @@ export default function TintsAndShades ({
 
 	return (
 		<div className="TintsAndShades">
-			<List colors={colors} title="Tints and Shades" currentColorIndex={n} />
+			<List colors={colors} title="Tints and Shades" currentColorIndex={n-1} />
 		</div>
 	);
 }
