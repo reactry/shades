@@ -7,7 +7,7 @@ export default function NSelector ({
 
 	let arr = [...Array(maxN).keys()]
 	let items = arr.map((v, i) => {
-		let innerClass = "cursor-pointer h-6 duration-300 hover:bg-slate-700";
+		let innerClass = "cursor-pointer h-6 duration-300 border-4 border-transparent hover:border-red-700";
 		innerClass += (i < n) ? " bg-red-500" : " bg-slate-300";
 		if ((i+1) % 5 === 0) innerClass += " mr-2"
 		return (

@@ -6,7 +6,7 @@ export default function Box ({r, g, b, hex, shade, active}) {
 		backgroundColor: hex
 	};
 
-	let boxClasses = "Box w-28 mr-3 my-2 border-4";
+	let boxClasses = "Box w-28 mr-2 my-2 border-4 rounded overflow-hidden";
 	if (active) boxClasses += " border-blue-800";
 
 	return (
