@@ -19,7 +19,7 @@ export default function DownloadTab ({
 	const [cssBorder, setCssBorder] = React.useState(true);
 	const [cssBorderSides, setCssBorderSides] = React.useState(false);
 
-	const [colorName, setColorName] = React.useState("reactry");
+	const [colorName, setColorName] = React.useState("purplish");
 
 	const preTag = React.useRef(null);
 

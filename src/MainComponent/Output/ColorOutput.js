@@ -9,13 +9,13 @@ import DownloadTab from './DownloadTab';
 
 const outputTabs = [
 	{
-		"title": "Single"
+		"title": "All"
 	},
 	{
-		"title": "Multi"
+		"title": "Split"
 	},
 	{
-		"title": "Downloads"
+		"title": "Download"
 	}
 ];
 
@@ -43,20 +43,20 @@ export default function ColorOutput ({
 
 	function getCurrentOutputTab () {
 		let currentTabTitle = outputTabs[currentTabIndex].title;
-		if (currentTabTitle === "Single") {
+		if (currentTabTitle === "All") {
 			return (
 				<div>
 					<TintsAndShades colors={colors} n={n} />
 				</div>
 			);
-		} else if (currentTabTitle === "Multi") {
+		} else if (currentTabTitle === "Split") {
 			return (
 				<div>
 					<Tints colors={colors.slice(0, n).reverse()} n={n} />
 					<Shades colors={colors.slice(-n)} n={n} />
 				</div>
 			);
-		} else if (currentTabTitle === "Downloads") {
+		} else if (currentTabTitle === "Download") {
 			return (
 				<div>
 					<DownloadTab colors={colors} n={n} />
