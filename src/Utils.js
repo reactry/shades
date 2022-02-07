@@ -36,9 +36,17 @@ function getShades (red, green, blue, n) {
 	return colors;
 }
 
+function getTintsAndShades (red, green, blue, n) {
+	let tints = getTints(red, green, blue, n).reverse();
+	tints.pop();
+	let shades = getShades(red, green, blue, n);
+	return [...tints, ...shades];
+}
+
 module.exports = {
 	roundOffComponent,
 	rgbToHex,
 	getTints,
-	getShades
+	getShades,
+	getTintsAndShades
 };
