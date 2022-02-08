@@ -1,13 +1,16 @@
+import {hexToRgb} from '../../Utils';
 
 
 
-export default function ColorButton ({title, hex}) {
+export default function ColorButton ({title, hex, mixColor}) {
 	let style = {
 		backgroundColor: hex
 	};
 
+	let [r, g, b] = hexToRgb(hex);
+
 	function handleClick () {
-		console.log("Lets go towards " + hex);
+		mixColor(r, g, b);
 	}
 
 	return (

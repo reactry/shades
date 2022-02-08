@@ -1,6 +1,16 @@
 
 
 
+export function hexToRgb (hex) {
+	hex = hex.slice(1);
+	let bigint = parseInt(hex, 16);
+	let r = (bigint >> 16) & 255;
+	let g = (bigint >> 8) & 255;
+	let b = bigint & 255;
+
+	return [r, g, b];
+}
+
 export function roundOffComponent (c) {
 	if (c < 0) return 0;
 	if (c > 255) return 255;
@@ -67,6 +77,24 @@ export function toneX (x) {
 		let change = Math.ceil(Math.abs(x - 128) * 0.1);
 		return (x < 128) ? (x + change) : (x - change);
 	}
+}
+
+export function mixX (x, y) {
+	if (x === y) {
+		return x;
+	}
+
+	let change = Math.ceil(Math.abs(x - y) * 0.1);
+	return (x < y) ? (x + change) : (x - change);
+}
+
+export function mixHex (base, mix) {
+	let [br, bg, bb] = hexToRgb(base);
+	let [mr, mg, mb] = hexToRgb(mix);
+	let nr = mixX(br, mr);
+	let ng = mixX(bg, mg);
+	let nb = mixX(bb, mb);
+	return [nr, ng, nb];
 }
 
 

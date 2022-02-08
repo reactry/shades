@@ -8,7 +8,8 @@ import ColorButton from './ColorButton';
 export default function BigBox ({
 	red, green, blue,
 	tintColor, toneColor, shadeColor,
-	flipColor, randomizeColor, saveColor, basicColors
+	flipColor, randomizeColor, saveColor,
+	basicColors, mixColor
 }) {
 
 	let hex = rgbToHex(red, green, blue);
@@ -17,7 +18,7 @@ export default function BigBox ({
 	};
 
 	let colorButtons = basicColors.map((c, i) => {
-		return <ColorButton key={i} {...c} />;
+		return <ColorButton key={i} {...c} mixColor={mixColor} />;
 	});
 
 	function saveButtonClick () {

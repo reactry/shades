@@ -9,7 +9,7 @@ import HexTab from './HexTab';
 import RGBTab from './RGBTab';
 import HSLTab from './HSLTab';
 
-import {shadeX, tintX, toneX} from '../../Utils';
+import {shadeX, tintX, toneX, mixX} from '../../Utils';
 
 const tabs = [
 	{
@@ -66,11 +66,18 @@ export default function ColorInput ({
 		transformColor((x) => Math.floor(Math.random() * 255));
 	}
 
+	function mixColor (r, g, b) {
+		setRed(mixX(red, r));
+		setGreen(mixX(green, g));
+		setBlue(mixX(blue, b));
+	}
+
 	const basicColors = settings.basicColors;
 	let bigBoxProps = {
 		red, green, blue,
 		tintColor, toneColor, shadeColor,
-		flipColor, randomizeColor, saveColor, basicColors
+		flipColor, randomizeColor, saveColor,
+		basicColors, mixColor
 	};
 
 	function changeX (x, setX, change) {
