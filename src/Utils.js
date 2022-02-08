@@ -60,4 +60,13 @@ export function lighten (x) {
 	}
 }
 
+export function tone (x) {
+	if (x === 128) {
+		return 128;
+	} else {
+		let change = Math.ceil(Math.abs(x - 128) * 0.1);
+		return (x < 128) ? (x + change) : (x - change);
+	}
+}
+
 

@@ -24,7 +24,7 @@ export default function BigBox ({
 			<div className="flex">
 				<BigButton title="Tint" handleClick={tintColor} />
 				<BigButton title="Shade" handleClick={shadeColor} />
-				<BigButton title="Tone?" handleClick={toneColor} />
+				<BigButton title="Tone" handleClick={toneColor} />
 			</div>
 			<div className="my-5 rounded overflow-hidden shadow-md">
 				<div className="h-40 md:h-56" style={style}></div>

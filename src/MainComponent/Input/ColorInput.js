@@ -9,7 +9,7 @@ import HexTab from './HexTab';
 import RGBTab from './RGBTab';
 import HSLTab from './HSLTab';
 
-import {darken, lighten} from '../../Utils';
+import {darken, lighten, tone} from '../../Utils';
 
 const tabs = [
 	{
@@ -55,7 +55,7 @@ export default function ColorInput ({
 	}
 
 	function toneColor () {
-		// transformColor((x) => (255 - x));
+		transformColor(tone);
 	}
 
 	function flipColor () {
