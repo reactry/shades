@@ -1,19 +1,24 @@
 import {rgbToHex} from '../../Utils';
 
 import BigButton from '../../BigButton';
+import ColorButton from './ColorButton';
 
 
 
 export default function BigBox ({
 	red, green, blue,
 	tintColor, toneColor, shadeColor,
-	flipColor, randomizeColor, saveColor
+	flipColor, randomizeColor, saveColor, basicColors
 }) {
 
 	let hex = rgbToHex(red, green, blue);
 	let style = {
 		backgroundColor: hex
 	};
+
+	let colorButtons = basicColors.map((c, i) => {
+		return <ColorButton key={i} {...c} />;
+	});
 
 	function saveButtonClick () {
 		saveColor({hex});
@@ -26,9 +31,15 @@ export default function BigBox ({
 				<BigButton title="Shade" handleClick={shadeColor} />
 				<BigButton title="Tone" handleClick={toneColor} />
 			</div>
-			<div className="my-5 rounded overflow-hidden shadow-md">
+			<div className="flex">
+				{colorButtons.slice(0, 6)}
+			</div>
+			<div className="my-1 rounded overflow-hidden shadow-md">
 				<div className="h-40 md:h-56" style={style}></div>
 				<div className="bg-slate-100 px-4 py-4 text-slate-700 font-bold text-xl">{hex}</div>
+			</div>
+			<div className="flex">
+				{colorButtons.slice(6)}
 			</div>
 			<div className="flex">
 				<BigButton title="Random" handleClick={randomizeColor} />

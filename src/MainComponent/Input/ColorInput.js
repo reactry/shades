@@ -28,7 +28,7 @@ const tabs = [
 export default function ColorInput ({
 	red, green, blue, n,
 	setRed, setGreen, setBlue, setN,
-	saveColor, showVault, setShowVault
+	saveColor, showVault, setShowVault, settings
 }) {
 
 	const [currentTabIndex, setCurrentTabIndex] = React.useState(1);
@@ -66,10 +66,11 @@ export default function ColorInput ({
 		transformColor((x) => Math.floor(Math.random() * 255));
 	}
 
+	const basicColors = settings.basicColors;
 	let bigBoxProps = {
 		red, green, blue,
 		tintColor, toneColor, shadeColor,
-		flipColor, randomizeColor, saveColor
+		flipColor, randomizeColor, saveColor, basicColors
 	};
 
 	function changeX (x, setX, change) {

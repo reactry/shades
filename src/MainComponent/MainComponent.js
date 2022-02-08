@@ -31,7 +31,7 @@ export default function MainComponent ({settings}) {
 	let colorInputProps = {
 		red, green, blue, n,
 		setRed, setGreen, setBlue, setN,
-		saveColor, showVault, setShowVault
+		saveColor, showVault, setShowVault, settings
 	};
 	let colorOutputProps = {
 		red, green, blue, n, shadeNames
