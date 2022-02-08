@@ -3,6 +3,24 @@
 		"title": "shades",
 		"tagline": "Just another tints and shades generator"
 	},
+
+	"basicColors": [
+		{"title": "Red", "hex": "#FF0000"},
+		{"title": "Maroon", "hex": "#800000"},
+		{"title": "Yellow", "hex": "#FFFF00"},
+		{"title": "Olive", "hex": "#808000"},
+
+		{"title": "Lime", "hex": "#00FF00"},
+		{"title": "Green", "hex": "#008000"},
+		{"title": "Aqua", "hex": "#00FFFF"},
+		{"title": "Teal", "hex": "#008080"},
+
+		{"title": "Blue", "hex": "#0000FF"},
+		{"title": "Navy", "hex": "#000080"},
+		{"title": "Fuchsia", "hex": "#FF00FF"},
+		{"title": "Purple", "hex": "#800080"}
+	],
+
 	"links": [
 		{
 			"title": "GitHub",
