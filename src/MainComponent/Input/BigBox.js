@@ -15,6 +15,10 @@ export default function BigBox ({
 		backgroundColor: hex
 	};
 
+	function saveButtonClick () {
+		saveColor(hex);
+	}
+
 	return (
 		<div className="BigBox px-4 py-8">
 			<div className="flex">
@@ -29,7 +33,7 @@ export default function BigBox ({
 			<div className="flex">
 				<BigButton title="Random" handleClick={randomizeColor} />
 				<BigButton title="Flip" handleClick={flipColor} />
-				<BigButton title="Save?" handleClick={saveColor} />
+				<BigButton title="Save?" handleClick={saveButtonClick} />
 			</div>
 		</div>
 	);
