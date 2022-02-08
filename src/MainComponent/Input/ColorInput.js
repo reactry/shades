@@ -45,15 +45,19 @@ export default function ColorInput ({
 		setBlue(t(blue));
 	}
 
-	function darkenColor () {
+	function shadeColor () {
 		transformColor(darken);
 	}
 
-	function lightenColor () {
+	function tintColor () {
 		transformColor(lighten);
 	}
 
-	function invertColor () {
+	function toneColor () {
+		// transformColor((x) => (255 - x));
+	}
+
+	function flipColor () {
 		transformColor((x) => (255 - x));
 	}
 
@@ -61,10 +65,14 @@ export default function ColorInput ({
 		transformColor((x) => Math.floor(Math.random() * 255));
 	}
 
+	function saveColor () {
+		//
+	}
+
 	let bigBoxProps = {
 		red, green, blue,
-		darkenColor, lightenColor,
-		invertColor, randomizeColor
+		tintColor, toneColor, shadeColor,
+		flipColor, randomizeColor, saveColor
 	};
 
 	function changeX (x, setX, change) {

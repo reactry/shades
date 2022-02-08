@@ -6,8 +6,8 @@ import BigButton from '../../BigButton';
 
 export default function BigBox ({
 	red, green, blue,
-	darkenColor, lightenColor,
-	invertColor, randomizeColor
+	tintColor, toneColor, shadeColor,
+	flipColor, randomizeColor, saveColor
 }) {
 
 	let hex = rgbToHex(red, green, blue);
@@ -18,9 +18,9 @@ export default function BigBox ({
 	return (
 		<div className="BigBox px-4 py-8">
 			<div className="flex">
-				<BigButton title="Tint" handleClick={lightenColor} />
-				<BigButton title="Shade" handleClick={darkenColor} />
-				<BigButton title="Tone" />
+				<BigButton title="Tint" handleClick={tintColor} />
+				<BigButton title="Shade" handleClick={shadeColor} />
+				<BigButton title="Tone?" handleClick={toneColor} />
 			</div>
 			<div className="my-5 rounded overflow-hidden shadow-md">
 				<div className="h-40 md:h-56" style={style}></div>
@@ -28,8 +28,8 @@ export default function BigBox ({
 			</div>
 			<div className="flex">
 				<BigButton title="Random" handleClick={randomizeColor} />
-				<BigButton title="Flip" handleClick={invertColor} />
-				<BigButton title="Save" />
+				<BigButton title="Flip" handleClick={flipColor} />
+				<BigButton title="Save?" handleClick={saveColor} />
 			</div>
 		</div>
 	);
