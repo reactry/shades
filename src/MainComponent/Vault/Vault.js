@@ -17,6 +17,7 @@ const vaultTabs = [
 
 
 export default function Vault ({
+	colorHistory, setColorHistory,
 	savedColors, setSavedColors,
 	showVault, setShowVault
 }) {
@@ -54,6 +55,7 @@ export default function Vault ({
 			return <CuratedList {...curatedProps} />;
 		} else if (currentTabTitle === "History") {
 			let historyProps = {
+				colorHistory, setColorHistory,
 				...commonProps
 			};
 			return <ColorHistory {...historyProps} />;

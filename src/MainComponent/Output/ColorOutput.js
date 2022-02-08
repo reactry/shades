@@ -22,7 +22,7 @@ const outputTabs = [
 
 
 export default function ColorOutput ({
-	red, green, blue, n, shadeNames
+	red, green, blue, hex, n, shadeNames
 }) {
 
 	const [currentTabIndex, setCurrentTabIndex] = React.useState(1);

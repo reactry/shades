@@ -26,9 +26,10 @@ const tabs = [
 
 
 export default function ColorInput ({
-	red, green, blue, n,
+	red, green, blue, hex, n,
 	setRed, setGreen, setBlue, setN,
-	saveColor, showVault, setShowVault, settings
+	saveColor, addColorToHistory,
+	showVault, setShowVault, settings
 }) {
 
 	const [currentTabIndex, setCurrentTabIndex] = React.useState(1);
@@ -41,6 +42,7 @@ export default function ColorInput ({
 	function randomizeBlue () {setBlue(Math.floor(Math.random() * 255));}
 
 	function transformColor (t) {
+		addColorToHistory();
 		setRed(t(red));
 		setGreen(t(green));
 		setBlue(t(blue));
@@ -67,6 +69,7 @@ export default function ColorInput ({
 	}
 
 	function mixColor (r, g, b) {
+		addColorToHistory();
 		setRed(mixX(red, r));
 		setGreen(mixX(green, g));
 		setBlue(mixX(blue, b));
