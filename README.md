@@ -21,15 +21,15 @@
 
 
 ### `0.3.0` - `2022-02-08`
+<img src="https://raw.githubusercontent.com/reactry/shades/master/img/0.3.0.png">
+<img src="https://raw.githubusercontent.com/reactry/shades/master/img/0.3.0-split.png">
+
 * displaying palette colors as rows
 * using HTML's native slider control in `NumberSlider`
 * added custom styles for `slider-thumb` in`NumberSlider.css`
 
 
 ### `0.2.0` - `2022-02-07`
-<img src="https://raw.githubusercontent.com/reactry/shades/master/img/0.2.0.png">
-<img src="https://raw.githubusercontent.com/reactry/shades/master/img/0.2.0-split.png">
-
 * added `Darken`, `Lighten` and `Invert` buttons
 * added `Download` tab with CSS output
 * added `Copy` and `Download` buttons
