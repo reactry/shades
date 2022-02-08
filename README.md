@@ -16,8 +16,14 @@
 * a long way to go
 
 
-### `0.3.0` - `future`
-* added palette row display
+### `0.4.0` - `future`
+* nothing yet
+
+
+### `0.3.0` - `2022-02-08`
+* displaying palette colors as rows
+* using HTML's native slider control in `NumberSlider`
+* added custom styles for `slider-thumb` in`NumberSlider.css`
 
 
 ### `0.2.0` - `2022-02-07`
