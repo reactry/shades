@@ -16,8 +16,17 @@
 * a long way to go
 
 
-### `0.4.0` - `future`
+### `0.5.0` - `future`
 * nothing yet
+
+
+### `0.4.0` - `2022-02-08`
+<img src="https://raw.githubusercontent.com/reactry/shades/master/img/0.4.0.png">
+
+* better names for buttons
+* added a `tone` button
+* added empty vault that can be opened with `Shift + V`
+* now shortcuts don't work when called with `Alt` and `Ctrl`
 
 
 ### `0.3.0` - `2022-02-08`
