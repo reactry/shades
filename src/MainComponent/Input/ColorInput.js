@@ -27,7 +27,8 @@ const tabs = [
 
 export default function ColorInput ({
 	red, green, blue, n,
-	setRed, setGreen, setBlue, setN, saveColor
+	setRed, setGreen, setBlue, setN,
+	saveColor, showVault, setShowVault
 }) {
 
 	const [currentTabIndex, setCurrentTabIndex] = React.useState(1);
@@ -83,6 +84,9 @@ export default function ColorInput ({
 	}
 
 	function keydownEvent (e) {
+		if (e.altKey) return;
+		if (e.ctrlKey) return;
+
 		let keyCode = e.keyCode;
 		let key = e.key.toUpperCase();
 
@@ -92,26 +96,34 @@ export default function ColorInput ({
 			return;
 		}
 
-		switch (key) {
-			case "Q": changeX(red, setRed, -25); break;
-			case "W": changeX(red, setRed, -5); break;
-			case "E": changeX(red, setRed, 5); break;
-			case "R": changeX(red, setRed, 25); break;
-			case "T": randomizeRed(); break;
+		if (e.shiftKey) {
+			switch (key) {
+				case "V": setShowVault(showVault => !showVault); break;
 
-			case "A": changeX(green, setGreen, -25); break;
-			case "S": changeX(green, setGreen, -5); break;
-			case "D": changeX(green, setGreen, 5); break;
-			case "F": changeX(green, setGreen, 25); break;
-			case "G": randomizeGreen(); break;
+				default: break;
+			}
+		} else {
+			switch (key) {
+				case "Q": changeX(red, setRed, -25); break;
+				case "W": changeX(red, setRed, -5); break;
+				case "E": changeX(red, setRed, 5); break;
+				case "R": changeX(red, setRed, 25); break;
+				case "T": randomizeRed(); break;
 
-			case "Z": changeX(blue, setBlue, -25); break;
-			case "X": changeX(blue, setBlue, -5); break;
-			case "C": changeX(blue, setBlue, 5); break;
-			case "V": changeX(blue, setBlue, 25); break;
-			case "B": randomizeBlue(); break;
+				case "A": changeX(green, setGreen, -25); break;
+				case "S": changeX(green, setGreen, -5); break;
+				case "D": changeX(green, setGreen, 5); break;
+				case "F": changeX(green, setGreen, 25); break;
+				case "G": randomizeGreen(); break;
 
-			default: break;
+				case "Z": changeX(blue, setBlue, -25); break;
+				case "X": changeX(blue, setBlue, -5); break;
+				case "C": changeX(blue, setBlue, 5); break;
+				case "V": changeX(blue, setBlue, 25); break;
+				case "B": randomizeBlue(); break;
+
+				default: break;
+			}
 		}
 	}
 

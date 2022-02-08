@@ -13,8 +13,7 @@ export default function MainComponent ({settings}) {
 
 	const [n, setN] = React.useState(6);
 
-	const [showVault, setShowVault] = React.useState(true);
-	function toggleVault () {setShowVault(!showVault)};
+	const [showVault, setShowVault] = React.useState(false);
 
 	const [savedColors, setSavedColors] = React.useState([]);
 	function saveColor (hex) {
@@ -27,11 +26,12 @@ export default function MainComponent ({settings}) {
 
 	let vaultProps = {
 		savedColors, setSavedColors,
-		showVault, toggleVault
+		showVault, setShowVault
 	};
 	let colorInputProps = {
 		red, green, blue, n,
-		setRed, setGreen, setBlue, setN, saveColor
+		setRed, setGreen, setBlue, setN,
+		saveColor, showVault, setShowVault
 	};
 	let colorOutputProps = {
 		red, green, blue, n, shadeNames

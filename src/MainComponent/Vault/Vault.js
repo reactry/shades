@@ -18,7 +18,7 @@ const vaultTabs = [
 
 export default function Vault ({
 	savedColors, setSavedColors,
-	showVault, toggleVault
+	showVault, setShowVault
 }) {
 
 	let bgClasses = [
@@ -66,7 +66,7 @@ export default function Vault ({
 	}
 
 	let vaultClass = "Vault fixed top-0 left-0 w-screen h-screen bg-slate-700 duration-300";
-	vaultClass += showVault ? " translate-y-0" : " translate-y-full";
+	vaultClass += (showVault) ? " translate-y-0" : " translate-y-full";
 
 	return (
 		<div className={vaultClass}>
@@ -77,7 +77,7 @@ export default function Vault ({
 					{getCurrentTab()}
 				</div>
 				<div className="px-4 py-4">
-					<BigButton title="Close" handleClick={toggleVault} />
+					<BigButton title="Close" handleClick={() => setShowVault(!showVault)} />
 				</div>
 				<RainbowBorder bgClasses={bgClasses} />
 			</div>
