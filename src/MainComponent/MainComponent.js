@@ -16,9 +16,9 @@ export default function MainComponent ({settings}) {
 	const [showVault, setShowVault] = React.useState(false);
 
 	const [savedColors, setSavedColors] = React.useState([]);
-	function saveColor (hex) {
+	function saveColor ({hex}) {
 		let colors = [...savedColors];
-		colors.push(hex);
+		colors.push({hex});
 		setSavedColors(colors);
 	}
 

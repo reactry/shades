@@ -59,6 +59,7 @@ export default function Vault ({
 			return <ColorHistory {...historyProps} />;
 		} else if (currentTabTitle === "Saved") {
 			let savedProps = {
+				savedColors, setSavedColors,
 				...commonProps
 			};
 			return <SavedColors {...savedProps} />;

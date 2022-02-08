@@ -16,7 +16,7 @@ export default function BigBox ({
 	};
 
 	function saveButtonClick () {
-		saveColor(hex);
+		saveColor({hex});
 	}
 
 	return (
@@ -33,7 +33,7 @@ export default function BigBox ({
 			<div className="flex">
 				<BigButton title="Random" handleClick={randomizeColor} />
 				<BigButton title="Flip" handleClick={flipColor} />
-				<BigButton title="Save?" handleClick={saveButtonClick} />
+				<BigButton title="Save" handleClick={saveButtonClick} />
 			</div>
 		</div>
 	);

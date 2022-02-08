@@ -9,7 +9,7 @@ export default function Box ({r, g, b, hex, shade, active}) {
 		backgroundColor: hex
 	};
 
-	let boxClasses = "Box w-28 mr-2 my-2 border-4 rounded-lg cursor-pointer overflow-hidden";
+	let boxClasses = "Box w-28 mr-2 my-2 border-4 rounded-lg cursor-pointer overflow-hidden text-center";
 	boxClasses += (active) ? " border-blue-800" : " hover:border-blue-600";
 
 	return (

@@ -1,10 +1,23 @@
+import Box from '../Output/List/Box';
 
 
 
-export default function SavedColors () {
+export default function SavedColors ({
+	savedColors, setSavedColors
+}) {
+
+	let savedColorItems = savedColors.map((c, i) => {
+		return (
+			<Box key={i} {...c} />
+		);
+	});
+
 	return (
 		<div className="SavedColors">
-			<div>SavedColors</div>
+			<div>Saved Colors</div>
+			<div className="flex px-4 py-4">
+				{savedColorItems}
+			</div>
 		</div>
 	);
 }
