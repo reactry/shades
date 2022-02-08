@@ -47,11 +47,11 @@ export function getTintsAndShades (red, green, blue, n) {
 
 
 
-export function darken (x) {
+export function shadeX (x) {
 	return Math.floor(x * 0.9);
 }
 
-export function lighten (x) {
+export function tintX (x) {
 	if (x < 20) {
 		return (x + 2)
 	} else {
@@ -60,7 +60,7 @@ export function lighten (x) {
 	}
 }
 
-export function tone (x) {
+export function toneX (x) {
 	if (x === 128) {
 		return 128;
 	} else {
