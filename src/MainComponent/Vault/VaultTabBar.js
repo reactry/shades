@@ -16,8 +16,8 @@ export default function VaultTabBar ({
 	});
 
 	return (
-		<div className="VaultTabBar select-none">
-			<div className="flex text-center text-sm font-bold bg-slate-300">
+		<div className="VaultTabBar select-none bg-slate-300">
+			<div className="flex text-center text-sm font-bold max-w-5xl m-auto">
 				{vaultTabItems}
 			</div>
 		</div>

@@ -40,21 +40,23 @@ export default function RGBTab ({
 		title: "Blue"
 	};
 
+	let rgbBoxClass = "grow pt-6 pb-2 bg-red-200 basis-0 rounded-lg";
+
 	return (
 		<div className="RGBTab select-none">
 
 			<div className="flex text-center font-bold text-slate-700 px-4 space-x-1 md:space-x-4">
-				<div className="grow pt-4 pb-2 bg-red-200 basis-0 rounded-lg">
-					<div className="text-5xl">{red}</div>
-					<div className="py-1">Red</div>
+				<div className={rgbBoxClass + " bg-red-200"}>
+					<div className="text-4xl">{red}</div>
+					<div className="text-sm py-2">Red</div>
 				</div>
-				<div className="grow pt-4 pb-2 bg-green-200 basis-0 rounded-lg">
-					<div className="text-5xl">{green}</div>
-					<div className="py-1">Green</div>
+				<div className={rgbBoxClass + " bg-green-200"}>
+					<div className="text-4xl">{green}</div>
+					<div className="text-sm py-2">Green</div>
 				</div>
-				<div className="grow pt-4 pb-2 bg-blue-200 basis-0 rounded-lg">
-					<div className="text-5xl">{blue}</div>
-					<div className="py-1">Blue</div>
+				<div className={rgbBoxClass + " bg-blue-200"}>
+					<div className="text-4xl">{blue}</div>
+					<div className="text-sm py-2">Blue</div>
 				</div>
 			</div>
 

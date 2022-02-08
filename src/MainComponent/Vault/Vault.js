@@ -65,7 +65,7 @@ export default function Vault ({
 		}
 	}
 
-	let vaultClass = "Vault fixed top-0 left-0 w-screen h-screen bg-slate-700 duration-300";
+	let vaultClass = "Vault fixed top-0 left-0 w-screen h-screen bg-slate-100 duration-300";
 	vaultClass += (showVault) ? " translate-y-0" : " translate-y-full";
 
 	return (
@@ -73,11 +73,13 @@ export default function Vault ({
 			<div className="flex flex-col h-full">
 				<RainbowBorder bgClasses={bgClasses} />
 				<VaultTabBar {...vaultTabBarProps} />
-				<div className="pt-4 grow">
+				<div className="grow w-full max-w-5xl m-auto px-4 py-4">
 					{getCurrentTab()}
 				</div>
-				<div className="px-4 py-4">
-					<BigButton title="Close" handleClick={() => setShowVault(!showVault)} />
+				<div className="">
+					<div className="px-4 py-6 max-w-5xl m-auto">
+						<BigButton title="Close" handleClick={() => setShowVault(!showVault)} />
+					</div>
 				</div>
 				<RainbowBorder bgClasses={bgClasses} />
 			</div>
