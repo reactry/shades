@@ -30,8 +30,10 @@ export default function KeyboardShortcuts ({keyboardShortcuts}) {
 		<div className="KeyboardShortcuts bg-slate-300 text-slate-700 px-4 py-24">
 			<div className="max-w-5xl m-auto">
 				<div className="px-4 py-8 flex">
-					<BigButton title={showShortcuts ? "Hide" : "Show"} handleClick={() => setShowShortcuts(!showShortcuts)} />
-					<div className="text-3xl pl-1 pt-3">Shortcuts</div>
+					<div>
+						<BigButton title={showShortcuts ? "Hide" : "Show"} handleClick={() => setShowShortcuts(!showShortcuts)} />
+					</div>
+					<div className="text-3xl pt-2">Shortcuts</div>
 				</div>
 				<div className="px-4 pt-8">
 					{showShortcuts && shortcutItems}

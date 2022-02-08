@@ -161,7 +161,7 @@ export default function ColorInput ({
 					</div>
 					<NSelector {...nSelectorProps} />
 				</div>
-				<div className="md:w-1/2">
+				<div className="md:w-1/2 md:pl-2">
 					<BigBox {...bigBoxProps} />
 				</div>
 			</div>

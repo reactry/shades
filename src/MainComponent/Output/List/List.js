@@ -35,7 +35,7 @@ export default function List ({
 						{colorRowItems}
 					</div>
 				</div>
-				<div className="flex flex-wrap mx-auto md:pl-4">
+				<div className="flex flex-wrap mx-auto md:pl-4 text-center">
 					{colorBoxItems}
 				</div>
 			</div>

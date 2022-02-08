@@ -6,10 +6,10 @@ import './NumberSlider.css';
 
 export default function NumberSlider ({
 	x, setX, min, max, step,
-	bgActive, bgPassive, title
+	bg, border, title
 }) {
 
-	let sliderClass = `appearance-none ${bgActive} outline-none w-full form-range rounded`;
+	let sliderClass = `appearance-none border-2 border-transparent ${bg} ${border} outline-none w-full form-range rounded`;
 
 	return (
 		<div className="NumberSlider px-4 py-2 font-bold text-sm outline-none">

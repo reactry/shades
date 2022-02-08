@@ -17,8 +17,8 @@ export default function RGBTab ({
 		...commonProps,
 		x: red,
 		setX: setRed,
-		bgActive: "bg-red-500",
-		bgPassive: "bg-red-200",
+		bg: "bg-red-500",
+		border: "hover:border-red-700",
 		title: "Red"
 	};
 
@@ -26,8 +26,8 @@ export default function RGBTab ({
 		...commonProps,
 		x: green,
 		setX: setGreen,
-		bgActive: "bg-green-500",
-		bgPassive: "bg-green-200",
+		bg: "bg-green-500",
+		border: "hover:border-green-700",
 		title: "Green"
 	};
 
@@ -35,8 +35,8 @@ export default function RGBTab ({
 		...commonProps,
 		x: blue,
 		setX: setBlue,
-		bgActive: "bg-blue-500",
-		bgPassive: "bg-blue-200",
+		bg: "bg-blue-500",
+		border: "hover:border-blue-700",
 		title: "Blue"
 	};
 
@@ -44,15 +44,15 @@ export default function RGBTab ({
 		<div className="RGBTab select-none">
 
 			<div className="flex text-center font-bold text-slate-700 px-4 space-x-1 md:space-x-4">
-				<div className="grow pt-4 pb-2 bg-red-200 basis-0 rounded">
+				<div className="grow pt-4 pb-2 bg-red-200 basis-0 rounded-md">
 					<div className="text-5xl">{red}</div>
 					<div className="py-1">Red</div>
 				</div>
-				<div className="grow pt-4 pb-2 bg-green-200 basis-0 rounded">
+				<div className="grow pt-4 pb-2 bg-green-200 basis-0 rounded-md">
 					<div className="text-5xl">{green}</div>
 					<div className="py-1">Green</div>
 				</div>
-				<div className="grow pt-4 pb-2 bg-blue-200 basis-0 rounded">
+				<div className="grow pt-4 pb-2 bg-blue-200 basis-0 rounded-md">
 					<div className="text-5xl">{blue}</div>
 					<div className="py-1">Blue</div>
 				</div>

@@ -7,7 +7,7 @@ export default function NSelector ({
 
 	let arr = [...Array(maxN).keys()]
 	let items = arr.map((v, i) => {
-		let innerClass = "cursor-pointer h-6 duration-300 border-4 border-transparent hover:border-red-700";
+		let innerClass = "cursor-pointer h-7 rounded duration-300 border-4 border-transparent hover:border-red-700";
 		innerClass += (i < n) ? " bg-red-500" : " bg-slate-300";
 		if ((i+1) % 5 === 0) innerClass += " mr-2"
 		return (
@@ -32,7 +32,7 @@ export default function NSelector ({
 
 	return (
 		<div className="NSelector py-4 px-4 border-2 border-transparent outline-none select-none focus:border-blue-400" tabIndex="0" onKeyDown={handleKeyDown}>
-			<h4 className="px-1 font-bold text-sm">Number of tints / shades?</h4>
+			<h4 className="px-1 font-bold text-sm">Choose number of tints / shades?</h4>
 			<div className="flex py-2 space-x-1">
 				{items}
 			</div>
