@@ -27,6 +27,7 @@ export default function MainComponent ({settings}) {
 
 	const [savedColors, setSavedColors] = React.useState([]);
 	function saveColor ({hex}) {
+		if (savedColors.length > 0 && hex === savedColors[savedColors.length - 1].hex) return;
 		let colors = [...savedColors];
 		colors.push({hex});
 		setSavedColors(colors);
