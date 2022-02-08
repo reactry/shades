@@ -18,7 +18,7 @@ export default function NumberSlider ({
 				<div className="NumberSlider">
 					<input type="range" min="0" max="255" value={x}
 						className={sliderClass}
-						onChange={(e) => setX(e.target.value)} />
+						onChange={(e) => setX(parseInt(e.target.value))} />
 				</div>
 			</div>
 		</div>
