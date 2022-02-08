@@ -5,6 +5,9 @@ import CuratedList from './CuratedList';
 import ColorHistory from './ColorHistory';
 import SavedColors from './SavedColors';
 
+import RainbowBorder from '../../RainbowBorder';
+import BigButton from '../../BigButton';
+
 const vaultTabs = [
 	{"title": "Curated"},
 	{"title": "History"},
@@ -14,8 +17,15 @@ const vaultTabs = [
 
 
 export default function Vault ({
-	savedColors
+	savedColors, setSavedColors,
+	showVault, toggleVault
 }) {
+
+	let bgClasses = [
+		"bg-red-500", "bg-slate-500",
+		"bg-blue-500", "bg-slate-500-500",
+		"bg-green-500"
+	];
 
 	const [currentTabIndex, setCurrentTabIndex] = React.useState(1);
 	let vaultTabBarProps = {
@@ -55,15 +65,21 @@ export default function Vault ({
 		}
 	}
 
+	let vaultClass = "Vault fixed top-0 left-0 w-screen h-screen bg-slate-700 duration-300";
+	vaultClass += showVault ? " translate-y-0" : " translate-y-full";
+
 	return (
-		<div className="Vault fixed top-0 left-0 w-screen h-screen bg-slate-700 pb-12 hidden">
-			<div className="md:flex max-w-5xl m-auto">
-				<div className="grow bg-slate-100">
-					<VaultTabBar {...vaultTabBarProps} />
-					<div className="pt-4">
-						{getCurrentTab()}
-					</div>
+		<div className={vaultClass}>
+			<div className="flex flex-col h-full">
+				<RainbowBorder bgClasses={bgClasses} />
+				<VaultTabBar {...vaultTabBarProps} />
+				<div className="pt-4 grow">
+					{getCurrentTab()}
 				</div>
+				<div className="px-4 py-4">
+					<BigButton title="Close" handleClick={toggleVault} />
+				</div>
+				<RainbowBorder bgClasses={bgClasses} />
 			</div>
 		</div>
 	);
