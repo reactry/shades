@@ -14,7 +14,7 @@ export default function Preferences () {
 					<div>
 						<BigButton title={showPreferences ? "Hide" : "Show"} handleClick={() => setShowPreferences(!showPreferences)} />
 					</div>
-					<div className="text-3xl pt-2">Preferences</div>
+					<div className="text-3xl pt-2 pl-4">Preferences</div>
 				</div>
 				{showPreferences && <div>
 					<div className="px-4 pt-8">

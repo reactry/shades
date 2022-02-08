@@ -33,7 +33,7 @@ export default function KeyboardShortcuts ({keyboardShortcuts}) {
 					<div>
 						<BigButton title={showShortcuts ? "Hide" : "Show"} handleClick={() => setShowShortcuts(!showShortcuts)} />
 					</div>
-					<div className="text-3xl pt-2">Shortcuts</div>
+					<div className="text-3xl pt-2 pl-4">Shortcuts</div>
 				</div>
 				<div className="px-4 pt-8">
 					{showShortcuts && shortcutItems}
