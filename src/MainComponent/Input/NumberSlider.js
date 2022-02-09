@@ -12,9 +12,9 @@ export default function NumberSlider ({
 	let sliderClass = `appearance-none border-2 border-transparent ${bg} ${border} outline-none w-full form-range rounded`;
 
 	return (
-		<div className="NumberSlider px-4 py-2 font-bold text-sm outline-none">
+		<div className="NumberSlider px-6 py-3 font-bold text-sm outline-none">
 			<div>
-				<h2 className="mb-2 px-1">{title}</h2>
+				<h2 className="px-1 mb-2 hidden">{title}</h2>
 				<div className="NumberSlider">
 					<input type="range" min="0" max="255" value={x}
 						className={sliderClass}

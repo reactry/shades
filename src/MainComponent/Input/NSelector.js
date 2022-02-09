@@ -31,7 +31,7 @@ export default function NSelector ({
 	}
 
 	return (
-		<div className="NSelector py-4 px-4 border-2 border-transparent outline-none select-none focus:border-blue-400" tabIndex="0" onKeyDown={handleKeyDown}>
+		<div className="NSelector px-4 outline-none select-none" tabIndex="0" onKeyDown={handleKeyDown}>
 			<h4 className="px-1 font-bold text-sm">Choose number of tints / shades?</h4>
 			<div className="flex py-2 space-x-1">
 				{items}

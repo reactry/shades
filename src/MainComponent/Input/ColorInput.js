@@ -1,6 +1,7 @@
 import React from 'react';
 
 import BigBox from './BigBox';
+import BigButton from '../../BigButton';
 
 import TopTabBar from './TopTabBar';
 import NSelector from './NSelector';
@@ -29,7 +30,7 @@ export default function ColorInput ({
 	red, green, blue, hex, n,
 	setRed, setGreen, setBlue, setN,
 	saveColor, addColorToHistory,
-	toggleVault, settings
+	toggleVault, openVaultTab, settings
 }) {
 
 	const [currentTabIndex, setCurrentTabIndex] = React.useState(1);
@@ -181,12 +182,17 @@ export default function ColorInput ({
 	return (
 		<div className="ColorInput bg-slate-300 pb-12">
 			<div className="md:flex max-w-5xl m-auto">
-				<div className="grow bg-slate-100">
+				<div className="grow bg-white pb-4">
 					<TopTabBar {...topTabBarProps} />
 					<div className="pt-4">
 						{getCurrentTab()}
 					</div>
 					<NSelector {...nSelectorProps} />
+					<div className="flex px-4 py-2">
+						<BigButton title="Curated" handleClick={() => openVaultTab(0)} />
+						<BigButton title="History" handleClick={() => openVaultTab(1)} />
+						<BigButton title="Saved" handleClick={() => openVaultTab(2)} />
+					</div>
 				</div>
 				<div className="md:w-1/2 md:pl-2">
 					<BigBox {...bigBoxProps} />

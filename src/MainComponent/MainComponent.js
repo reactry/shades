@@ -22,6 +22,11 @@ export default function MainComponent ({settings}) {
 
 	const [showVault, setShowVault] = React.useState(false);
 	const toggleVault = () => setShowVault(showVault => !showVault);
+	const [currentTabIndex, setCurrentTabIndex] = React.useState(1);
+	const openVaultTab = (n) => {
+		setCurrentTabIndex(n);
+		toggleVault();
+	}
 
 	const [colorHistory, setColorHistory] = React.useState([]);
 	function addColorToHistory () {
@@ -43,13 +48,14 @@ export default function MainComponent ({settings}) {
 	let vaultProps = {
 		colorHistory, setColorHistory,
 		savedColors, setSavedColors,
-		setHexColor, toggleVault, showVault
+		setHexColor, toggleVault, showVault,
+		currentTabIndex, setCurrentTabIndex
 	};
 	let colorInputProps = {
 		red, green, blue, hex, n,
 		setRed, setGreen, setBlue, setN,
 		saveColor, addColorToHistory,
-		toggleVault, settings
+		toggleVault, openVaultTab, settings
 	};
 	let colorOutputProps = {
 		red, green, blue, hex, n, shadeNames

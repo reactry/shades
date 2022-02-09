@@ -19,7 +19,8 @@ const vaultTabs = [
 export default function Vault ({
 	colorHistory, setColorHistory,
 	savedColors, setSavedColors,
-	setHexColor, toggleVault, showVault
+	setHexColor, toggleVault, showVault,
+	currentTabIndex, setCurrentTabIndex
 }) {
 
 	let bgClasses = [
@@ -28,7 +29,6 @@ export default function Vault ({
 		"bg-green-500"
 	];
 
-	const [currentTabIndex, setCurrentTabIndex] = React.useState(1);
 	let vaultTabBarProps = {
 		vaultTabs, currentTabIndex, setCurrentTabIndex
 	};
