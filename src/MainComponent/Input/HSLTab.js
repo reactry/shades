@@ -7,7 +7,7 @@ import NumberSlider from './NumberSlider';
 
 
 export default function HSLTab ({
-	red, green, blue,
+	red, green, blue, hex,
 	setRed, setGreen, setBlue
 }) {
 
@@ -64,7 +64,7 @@ export default function HSLTab ({
 		title: "Lightness"
 	};
 
-	let hslBoxClass = "grow pt-5 pb-3 bg-slate-200 basis-0 rounded-lg";
+	let hslBoxClass = "grow pt-5 pb-3 bg-slate-200 basis-0 rounded";
 
 	return (
 		<div className="HSLTab select-none">

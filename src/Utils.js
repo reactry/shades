@@ -2,7 +2,14 @@
 
 
 export function hexToRgb (hex) {
-	hex = hex.slice(1);
+	if (hex[0] === "#") hex = hex.slice(1);
+
+	if (hex.length === 3) {
+		hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+	}
+
+	if (hex.length !== 6) return [0, 0, 0];
+
 	let bigint = parseInt(hex, 16);
 	let r = (bigint >> 16) & 255;
 	let g = (bigint >> 8) & 255;

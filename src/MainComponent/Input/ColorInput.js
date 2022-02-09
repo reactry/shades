@@ -76,6 +76,13 @@ export default function ColorInput ({
 		setBlue(mixX(blue, b));
 	}
 
+	function setRGB (r, g, b) {
+		addColorToHistory();
+		setRed(r);
+		setGreen(g);
+		setBlue(b);
+	}
+
 	const basicColors = settings.basicColors;
 	let bigBoxProps = {
 		red, green, blue,
@@ -153,8 +160,8 @@ export default function ColorInput ({
 	function getCurrentTab () {
 		let currentTabTitle = tabs[currentTabIndex].title;
 		let colorsAndSetters = {
-			red, green, blue,
-			setRed, setGreen, setBlue
+			red, green, blue, hex,
+			setRed, setGreen, setBlue, setRGB
 		};
 
 		if (currentTabTitle === "Hex") {

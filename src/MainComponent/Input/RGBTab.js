@@ -3,7 +3,7 @@ import NumberSlider from './NumberSlider';
 
 
 export default function RGBTab ({
-	red, green, blue,
+	red, green, blue, hex,
 	setRed, setGreen, setBlue
 }) {
 
@@ -39,7 +39,7 @@ export default function RGBTab ({
 		title: "Blue"
 	};
 
-	let rgbBoxClass = "grow pt-4 pb-2 bg-red-200 basis-0 rounded-lg";
+	let rgbBoxClass = "grow pt-5 pb-3 bg-red-200 basis-0 rounded";
 
 	return (
 		<div className="RGBTab select-none">
