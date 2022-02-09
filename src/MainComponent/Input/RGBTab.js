@@ -9,8 +9,7 @@ export default function RGBTab ({
 
 	let commonProps = {
 		min: 0,
-		max: 255,
-		step: 10
+		max: 255
 	}
 
 	let redSliderProps = {

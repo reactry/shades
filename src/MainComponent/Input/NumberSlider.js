@@ -5,7 +5,7 @@ import './NumberSlider.css';
 
 
 export default function NumberSlider ({
-	x, setX, min, max, step,
+	x, setX, min, max,
 	bg, border, title
 }) {
 
@@ -16,7 +16,7 @@ export default function NumberSlider ({
 			<div>
 				<h2 className="px-1 mb-2 hidden">{title}</h2>
 				<div className="NumberSlider">
-					<input type="range" min="0" max="255" value={x}
+					<input type="range" min={min} max={max} value={x}
 						className={sliderClass}
 						onChange={(e) => setX(parseInt(e.target.value))} />
 				</div>
