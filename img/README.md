@@ -1,6 +1,11 @@
 
 
 
+### `0.5.0` - `2022-02-10`
+<img src="https://raw.githubusercontent.com/reactry/shades/master/img/0.5.0.png">
+
+
+
 ### `0.4.0` - `2022-02-08`
 <img src="https://raw.githubusercontent.com/reactry/shades/master/img/0.4.0.png">
 

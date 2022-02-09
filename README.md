@@ -16,8 +16,20 @@
 * a long way to go
 
 
-### `0.5.0` - `future`
+### `0.6.0` - `future`
 * nothing yet
+
+
+### `0.5.0` - `2022-02-10`
+<img src="https://raw.githubusercontent.com/reactry/shades/master/img/0.5.0.png">
+
+* implemented `HSL` sliders
+* implemented utils `rgbToHsl()` and `hslToRgb()`
+* added `Vault` with `Curated`, `History` and `Saved` tabs
+* added 3 butttons to open vault tabs
+* implemented `Save` button functionality
+* added 12 basic color buttons to allow mixing
+* styling changes to `InputComponent`
 
 
 ### `0.4.0` - `2022-02-08`
