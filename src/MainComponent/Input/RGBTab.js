@@ -42,8 +42,8 @@ export default function RGBTab ({
 	};
 
 	let rgbBoxClass = "grow pt-5 pb-3 basis-0 rounded cursor-pointer border-4 border-transparent duration-300";
-	let fixedBoxClass = rgbBoxClass + " text-slate-400 border-slate-700";
-	let notFixedBoxClass = rgbBoxClass + " text-slate-700 hover:border-slate-400";
+	let fixedBoxClass = rgbBoxClass + " text-slate-500 border-slate-500";
+	let notFixedBoxClass = rgbBoxClass + " text-slate-700 hover:border-slate-700";
 	let redBoxClass = (redIsFixed ? fixedBoxClass : notFixedBoxClass) + " bg-red-200";
 	let greenBoxClass = (greenIsFixed ? fixedBoxClass : notFixedBoxClass) + " bg-green-200";
 	let blueBoxClass = (blueIsFixed ? fixedBoxClass : notFixedBoxClass) + " bg-blue-200";

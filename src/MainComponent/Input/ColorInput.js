@@ -46,12 +46,21 @@ export default function ColorInput ({
 	function randomizeGreen () {setGreen(Math.floor(Math.random() * 255));}
 	function randomizeBlue () {setBlue(Math.floor(Math.random() * 255));}
 
+	function setRedIf (r) {if (!redIsFixed) setRed(r);};
+	function setGreenIf (g) {if (!greenIsFixed) setGreen(g);};
+	function setBlueIf (b) {if (!blueIsFixed) setBlue(b);};
+
+	function setRGBIf (r, g, b) {
+		setRedIf(r);
+		setGreenIf(g);
+		setBlueIf(b);
+	}
+
 	function transformColor (t) {
 		addColorToHistory();
-		console.log(redIsFixed, greenIsFixed, blueIsFixed);
-		if (!redIsFixed) setRed(t(red));
-		if (!greenIsFixed) setGreen(t(green));
-		if (!blueIsFixed) setBlue(t(blue));
+		setRedIf(t(red));
+		setGreenIf(t(green));
+		setBlueIf(t(blue));
 	}
 
 	function shadeColor () {
@@ -76,9 +85,9 @@ export default function ColorInput ({
 
 	function mixColor (r, g, b) {
 		addColorToHistory();
-		setRed(mixX(red, r));
-		setGreen(mixX(green, g));
-		setBlue(mixX(blue, b));
+		if (!redIsFixed) setRed(mixX(red, r));
+		if (!greenIsFixed) setGreen(mixX(green, g));
+		if (!blueIsFixed) setBlue(mixX(blue, b));
 	}
 
 	function setRGB (r, g, b) {
