@@ -85,9 +85,9 @@ export default function ColorInput ({
 
 	function mixColor (r, g, b) {
 		addColorToHistory();
-		if (!redIsFixed) setRed(mixX(red, r));
-		if (!greenIsFixed) setGreen(mixX(green, g));
-		if (!blueIsFixed) setBlue(mixX(blue, b));
+		setRedIf(mixX(red, r));
+		setGreenIf(mixX(green, g));
+		setBlueIf(mixX(blue, b));
 	}
 
 	function setRGB (r, g, b) {
@@ -173,7 +173,8 @@ export default function ColorInput ({
 		}
 	}, [
 		red, green, blue,
-		setRed, setGreen, setBlue
+		setRed, setGreen, setBlue,
+		keydownEvent
 	]);
 
 	function getCurrentTab () {
