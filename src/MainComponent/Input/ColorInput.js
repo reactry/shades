@@ -181,14 +181,14 @@ export default function ColorInput ({
 
 	return (
 		<div className="ColorInput bg-slate-300 pb-12">
-			<div className="md:flex max-w-5xl m-auto">
-				<div className="grow bg-white pb-4">
+			<div className="md:flex md:items-start max-w-5xl m-auto">
+				<div className="grow bg-white">
 					<TopTabBar {...topTabBarProps} />
 					<div className="pt-4">
 						{getCurrentTab()}
 					</div>
 					<NSelector {...nSelectorProps} />
-					<div className="flex px-4 py-2">
+					<div className="flex px-4 py-4 bg-slate-300">
 						<BigButton title="Curated" handleClick={() => openVaultTab(0)} />
 						<BigButton title="History" handleClick={() => openVaultTab(1)} />
 						<BigButton title="Saved" handleClick={() => openVaultTab(2)} />
