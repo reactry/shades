@@ -153,6 +153,7 @@ export function rgbToHsl (r, g, b) {
 
 	h = Math.round(h * 60);
 	if (h < 0) h += 360;
+	if (h >= 360) h -= 360;
 
 	l = (cmax + cmin) / 2;
 	s = (delta === 0) ? 0 : delta / (1 - Math.abs(2 * l - 1));
