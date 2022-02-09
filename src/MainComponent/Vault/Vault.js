@@ -19,7 +19,7 @@ const vaultTabs = [
 export default function Vault ({
 	colorHistory, setColorHistory,
 	savedColors, setSavedColors,
-	showVault, setShowVault
+	toggleVault, showVault
 }) {
 
 	let bgClasses = [
@@ -35,7 +35,9 @@ export default function Vault ({
 
 	function getCurrentTab () {
 		let currentTabTitle = vaultTabs[currentTabIndex].title;
-		let commonProps = {};
+		let commonProps = {
+			toggleVault
+		};
 
 		if (currentTabTitle === "Curated") {
 			let curatedProps = {
@@ -70,7 +72,7 @@ export default function Vault ({
 				</div>
 				<div className="">
 					<div className="px-4 py-6 max-w-5xl m-auto">
-						<BigButton title="Close" handleClick={() => setShowVault(!showVault)} />
+						<BigButton title="Close" handleClick={toggleVault} />
 					</div>
 				</div>
 				<RainbowBorder bgClasses={bgClasses} />

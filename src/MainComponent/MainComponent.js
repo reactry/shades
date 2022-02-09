@@ -17,6 +17,7 @@ export default function MainComponent ({settings}) {
 	const [n, setN] = React.useState(6);
 
 	const [showVault, setShowVault] = React.useState(false);
+	const toggleVault = (showVault) => setShowVault(!showVault);
 
 	const [colorHistory, setColorHistory] = React.useState([]);
 	function addColorToHistory () {
@@ -38,7 +39,7 @@ export default function MainComponent ({settings}) {
 	let vaultProps = {
 		colorHistory, setColorHistory,
 		savedColors, setSavedColors,
-		showVault, setShowVault
+		toggleVault, showVault
 	};
 	let colorInputProps = {
 		red, green, blue, hex, n,

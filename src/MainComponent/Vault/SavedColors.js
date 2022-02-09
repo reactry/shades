@@ -3,12 +3,12 @@ import ColorTile from './ColorTile';
 
 
 export default function SavedColors ({
-	savedColors, setSavedColors
+	savedColors, setSavedColors, toggleVault
 }) {
 
 	let savedColorItems = savedColors.map((c, i) => {
 		return (
-			<ColorTile key={i} {...c} />
+			<ColorTile key={i} {...c} toggleVault={toggleVault} />
 		);
 	});
 
