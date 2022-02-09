@@ -6,8 +6,9 @@ import {hexToRgb} from '../../Utils';
 
 export default function HexTab ({
 	red, green, blue, hex,
-	setRed, setGreen, setBlue, setRGB
+	setRGB
 }) {
+
 	const [error, setError] = React.useState(false);
 
 	function handleHexInputChange (e) {
