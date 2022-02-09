@@ -1,4 +1,4 @@
-import Box from '../Output/List/Box';
+import ColorTile from './ColorTile';
 
 
 
@@ -8,14 +8,14 @@ export default function SavedColors ({
 
 	let savedColorItems = savedColors.map((c, i) => {
 		return (
-			<Box key={i} {...c} />
+			<ColorTile key={i} {...c} />
 		);
 	});
 
 	return (
 		<div className="SavedColors">
 			<div>Saved Colors</div>
-			<div className="flex flex-wrap px-4 py-4">
+			<div className="flex flex-wrap py-4">
 				{savedColorItems}
 			</div>
 		</div>
