@@ -4,7 +4,9 @@ import NumberSlider from './NumberSlider';
 
 export default function RGBTab ({
 	red, green, blue, hex,
-	setRed, setGreen, setBlue
+	setRed, setGreen, setBlue,
+	redIsFixed, greenIsFixed, blueIsFixed,
+	setRedIsFixed, setGreenIsFixed, setBlueIsFixed
 }) {
 
 	let commonProps = {
@@ -39,21 +41,26 @@ export default function RGBTab ({
 		title: "Blue"
 	};
 
-	let rgbBoxClass = "grow pt-5 pb-3 bg-red-200 basis-0 rounded";
+	let rgbBoxClass = "grow pt-5 pb-3 basis-0 rounded cursor-pointer border-4 border-transparent duration-300";
+	let fixedBoxClass = rgbBoxClass + " text-slate-400 border-slate-700";
+	let notFixedBoxClass = rgbBoxClass + " text-slate-700 hover:border-slate-400";
+	let redBoxClass = (redIsFixed ? fixedBoxClass : notFixedBoxClass) + " bg-red-200";
+	let greenBoxClass = (greenIsFixed ? fixedBoxClass : notFixedBoxClass) + " bg-green-200";
+	let blueBoxClass = (blueIsFixed ? fixedBoxClass : notFixedBoxClass) + " bg-blue-200";
 
 	return (
 		<div className="RGBTab select-none">
 
-			<div className="flex text-center font-bold text-slate-700 px-8 pt-4 space-x-1 max-w-md mx-auto">
-				<div className={rgbBoxClass + " bg-red-200"}>
+			<div className="flex text-center font-bold px-8 pt-4 space-x-1 max-w-md mx-auto">
+				<div className={redBoxClass} onClick={() => setRedIsFixed(redIsFixed => !redIsFixed)}>
 					<div className="text-4xl">{red}</div>
 					<div className="text-sm py-1">Red</div>
 				</div>
-				<div className={rgbBoxClass + " bg-green-200"}>
+				<div className={greenBoxClass} onClick={() => setGreenIsFixed(greenIsFixed => !greenIsFixed)}>
 					<div className="text-4xl">{green}</div>
 					<div className="text-sm py-1">Green</div>
 				</div>
-				<div className={rgbBoxClass + " bg-blue-200"}>
+				<div className={blueBoxClass} onClick={() => setBlueIsFixed(blueIsFixed => !blueIsFixed)}>
 					<div className="text-4xl">{blue}</div>
 					<div className="text-sm py-1">Blue</div>
 				</div>

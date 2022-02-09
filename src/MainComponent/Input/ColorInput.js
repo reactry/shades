@@ -38,15 +38,20 @@ export default function ColorInput ({
 		tabs, currentTabIndex, setCurrentTabIndex
 	};
 
+	const [redIsFixed, setRedIsFixed] = React.useState(false);
+	const [greenIsFixed, setGreenIsFixed] = React.useState(false);
+	const [blueIsFixed, setBlueIsFixed] = React.useState(false);
+
 	function randomizeRed () {setRed(Math.floor(Math.random() * 255));}
 	function randomizeGreen () {setGreen(Math.floor(Math.random() * 255));}
 	function randomizeBlue () {setBlue(Math.floor(Math.random() * 255));}
 
 	function transformColor (t) {
 		addColorToHistory();
-		setRed(t(red));
-		setGreen(t(green));
-		setBlue(t(blue));
+		console.log(redIsFixed, greenIsFixed, blueIsFixed);
+		if (!redIsFixed) setRed(t(red));
+		if (!greenIsFixed) setGreen(t(green));
+		if (!blueIsFixed) setBlue(t(blue));
 	}
 
 	function shadeColor () {
@@ -177,7 +182,9 @@ export default function ColorInput ({
 		} else if (currentTabTitle === "RGB") {
 			let rgbProps = {
 				...commonProps,
-				setRed, setGreen, setBlue
+				setRed, setGreen, setBlue,
+				redIsFixed, greenIsFixed, blueIsFixed,
+				setRedIsFixed, setGreenIsFixed, setBlueIsFixed
 			};
 			return <RGBTab {...rgbProps} />;
 		} else if (currentTabTitle === "HSL") {
