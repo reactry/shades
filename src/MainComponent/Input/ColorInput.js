@@ -10,7 +10,7 @@ import HexTab from './HexTab';
 import RGBTab from './RGBTab';
 import HSLTab from './HSLTab';
 
-import {shadeX, tintX, toneX, mixX} from '../../Utils';
+import {shadeX, tintX, toneX, mixX, hslToRgb} from '../../Utils';
 
 const tabs = [
 	{
@@ -81,6 +81,11 @@ export default function ColorInput ({
 		setRed(r);
 		setGreen(g);
 		setBlue(b);
+	}
+
+	function setHSL (h, s, l) {
+		let [r, g, b] = hslToRgb(h, s, l);
+		setRGB(r, g, b);
 	}
 
 	const basicColors = settings.basicColors;
@@ -176,7 +181,8 @@ export default function ColorInput ({
 			return <RGBTab {...rgbProps} />;
 		} else if (currentTabTitle === "HSL") {
 			let hslProps = {
-				...colorsAndSetters
+				...colorsAndSetters,
+				setHSL
 			};
 			return <HSLTab {...hslProps} />;
 		}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {hslToRgb, rgbToHsl} from '../../Utils';
+import {rgbToHsl} from '../../Utils';
 
 import NumberSlider from './NumberSlider';
 
@@ -8,29 +8,28 @@ import NumberSlider from './NumberSlider';
 
 export default function HSLTab ({
 	red, green, blue, hex,
-	setRed, setGreen, setBlue
+	setHSL
 }) {
 
 	let [h, s, l] = rgbToHsl(red, green, blue);
 
-	function updateRGB () {
-		let [r, g, b] = hslToRgb(h, s, l);
-		setRed(r); setGreen(g); setBlue(b);
+	function updateColor () {
+		setHSL(h, s, l);
 	}
 
 	function setH (value) {
 		h = value;
-		updateRGB();
+		updateColor();
 	}
 
 	function setS (value) {
 		s = value;
-		updateRGB();
+		updateColor();
 	}
 
 	function setL (value) {
 		l = value;
-		updateRGB();
+		updateColor();
 	}
 
 	let hueSliderProps = {
