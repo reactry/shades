@@ -64,21 +64,30 @@ export default function HSLTab ({
 		title: "Lightness"
 	};
 
-	let hslBoxClass = "grow pt-4 pb-2 bg-slate-200 basis-0 rounded-lg";
+	let hslBoxClass = "grow pt-5 pb-3 bg-slate-200 basis-0 rounded-lg";
 
 	return (
 		<div className="HSLTab select-none">
 			<div className="flex text-center font-bold text-slate-700 px-8 pt-4 space-x-1 max-w-md mx-auto">
 				<div className={hslBoxClass}>
-					<div className="text-4xl">{h}</div>
+					<div className="text-4xl">
+						<span>{h}</span>
+						<span className="align-top">&deg;</span>
+					</div>
 					<div className="text-sm py-1">Hue</div>
 				</div>
 				<div className={hslBoxClass}>
-					<div className="text-4xl">{s}</div>
+					<div>
+						<span className="text-4xl">{s}</span>
+						<span className="pl-1">%</span>
+					</div>
 					<div className="text-sm py-1">Saturation</div>
 				</div>
 				<div className={hslBoxClass}>
-					<div className="text-4xl">{l}</div>
+					<div>
+						<span className="text-4xl">{l}</span>
+						<span className="pl-1">%</span>
+					</div>
 					<div className="text-sm py-1">Lightness</div>
 				</div>
 			</div>
