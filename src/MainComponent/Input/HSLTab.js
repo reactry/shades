@@ -18,6 +18,7 @@ export default function HSLTab ({
 
 	function updateRGB () {
 		let [r, g, b] = hslToRgb(h, s, l);
+		setRed(r); setGreen(g); setBlue(b);
 	}
 
 	function setHue (value) {
