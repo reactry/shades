@@ -11,28 +11,25 @@ export default function HSLTab ({
 	setRed, setGreen, setBlue
 }) {
 
-	let [hue, saturation, lightness] = rgbToHsl(red, green, blue);
-	const [h, setH] = React.useState(hue);
-	const [s, setS] = React.useState(saturation);
-	const [l, setL] = React.useState(lightness);
+	let [h, s, l] = rgbToHsl(red, green, blue);
 
 	function updateRGB () {
 		let [r, g, b] = hslToRgb(h, s, l);
 		setRed(r); setGreen(g); setBlue(b);
 	}
 
-	function setHue (value) {
-		setH(value);
+	function setH (value) {
+		h = value;
 		updateRGB();
 	}
 
-	function setSaturation (value) {
-		setS(value);
+	function setS (value) {
+		s = value;
 		updateRGB();
 	}
 
-	function setLightness (value) {
-		setL(value);
+	function setL (value) {
+		l = value;
 		updateRGB();
 	}
 
@@ -40,7 +37,7 @@ export default function HSLTab ({
 		min: 0,
 		max: 360,
 		x: h,
-		setX: setHue,
+		setX: setH,
 		bg: "bg-slate-500",
 		border: "hover:border-slate-700",
 		title: "Green"
@@ -56,14 +53,14 @@ export default function HSLTab ({
 	let saturationSliderProps = {
 		...commonProps,
 		x: s,
-		setX: setSaturation,
+		setX: setS,
 		title: "Saturation"
 	};
 
 	let lightnessSliderProps = {
 		...commonProps,
 		x: l,
-		setX: setLightness,
+		setX: setL,
 		title: "Lightness"
 	};
 
