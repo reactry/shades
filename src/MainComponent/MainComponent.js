@@ -4,7 +4,7 @@ import Vault from './Vault';
 import ColorInput from './Input';
 import ColorOutput from './Output';
 
-import {rgbToHex} from '../Utils';
+import {rgbToHex, hexToRgb} from '../Utils';
 
 
 
@@ -13,6 +13,10 @@ export default function MainComponent ({settings}) {
 	const [green, setGreen] = React.useState(70);
 	const [blue, setBlue] = React.useState(230);
 	const hex = rgbToHex(red, green, blue);
+	function setHexColor (hex) {
+		let [r, g, b] = hexToRgb(hex);
+		setRed(r); setGreen(g); setBlue(b);
+	}
 
 	const [n, setN] = React.useState(6);
 
@@ -39,7 +43,7 @@ export default function MainComponent ({settings}) {
 	let vaultProps = {
 		colorHistory, setColorHistory,
 		savedColors, setSavedColors,
-		toggleVault, showVault
+		setHexColor, toggleVault, showVault
 	};
 	let colorInputProps = {
 		red, green, blue, hex, n,

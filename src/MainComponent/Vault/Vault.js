@@ -19,7 +19,7 @@ const vaultTabs = [
 export default function Vault ({
 	colorHistory, setColorHistory,
 	savedColors, setSavedColors,
-	toggleVault, showVault
+	setHexColor, toggleVault, showVault
 }) {
 
 	let bgClasses = [
@@ -36,7 +36,7 @@ export default function Vault ({
 	function getCurrentTab () {
 		let currentTabTitle = vaultTabs[currentTabIndex].title;
 		let commonProps = {
-			toggleVault
+			setHexColor, toggleVault
 		};
 
 		if (currentTabTitle === "Curated") {
@@ -67,7 +67,7 @@ export default function Vault ({
 			<div className="flex flex-col h-full">
 				<RainbowBorder bgClasses={bgClasses} />
 				<VaultTabBar {...vaultTabBarProps} />
-				<div className="grow w-full max-w-5xl m-auto px-4 py-4">
+				<div className="grow w-full max-w-5xl m-auto px-4 py-4 overflow-y-auto">
 					{getCurrentTab()}
 				</div>
 				<div className="">
