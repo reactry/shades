@@ -29,7 +29,7 @@ export default function ColorInput ({
 	red, green, blue, hex, n,
 	setRed, setGreen, setBlue, setN,
 	saveColor, addColorToHistory,
-	showVault, setShowVault, settings
+	toggleVault, settings
 }) {
 
 	const [currentTabIndex, setCurrentTabIndex] = React.useState(1);
@@ -109,7 +109,7 @@ export default function ColorInput ({
 
 		if (e.shiftKey) {
 			switch (key) {
-				case "V": setShowVault(showVault => !showVault); break;
+				case "V": toggleVault(); break;
 
 				default: break;
 			}

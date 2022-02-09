@@ -59,7 +59,7 @@ export default function Vault ({
 		}
 	}
 
-	let vaultClass = "Vault fixed top-0 left-0 w-screen h-screen bg-slate-100 duration-300";
+	let vaultClass = "Vault fixed z-50 top-0 left-0 w-screen h-screen bg-slate-100 duration-300";
 	vaultClass += (showVault) ? " translate-y-0" : " translate-y-full";
 
 	return (
