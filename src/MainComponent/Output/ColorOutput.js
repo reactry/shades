@@ -81,7 +81,7 @@ export default function ColorOutput ({
 	};
 
 	return (
-		<div className="ColorOutput bg-slate-300 min-h-screen pb-20">
+		<div className="ColorOutput bg-slate-200 min-h-screen pb-20">
 			<ColorMeter {...colorMeterProps} />
 			<OutputTabBar {...outputTabBarProps} />
 			<div className="max-w-5xl mx-auto px-2">

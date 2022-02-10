@@ -20,7 +20,7 @@ export default function Box ({
 	};
 
 	let boxClasses = "Box flex mr-2 mb-6 border-y-[6px] text-sm font-bold text-slate-700 rounded select-none overflow-hidden text-center duration-300";
-	boxClasses += (active || showOptions) ? " border-blue-800" : " hover:border-blue-600";
+	boxClasses += (active || showOptions) ? " border-blue-800" : " border-slate-400 hover:border-blue-600";
 
 	return (
 		<div className={boxClasses}>
