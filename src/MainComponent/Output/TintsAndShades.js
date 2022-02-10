@@ -7,12 +7,17 @@ export default function TintsAndShades ({
 	colors, n, setHexColor, saveColor
 }) {
 
-	let props = {setHexColor, saveColor};
+	let props = {
+		colors,
+		currentColorIndex: n-1,
+		length: colors.length,
+		setHexColor, saveColor
+	};
 
 	return (
 		<div className="TintsAndShades">
-			<ColorMeter colors={colors} />
-			<List colors={colors} title="Tints and Shades" currentColorIndex={n-1} length={colors.length} {...props} />
+			<ColorMeter {...props} />
+			<List title="Tints and Shades" {...props} />
 		</div>
 	);
 }
