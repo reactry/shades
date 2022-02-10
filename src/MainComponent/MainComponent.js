@@ -4,6 +4,7 @@ import Vault from './Vault';
 import ColorInput from './Input';
 import ColorOutput from './Output';
 
+import {colorita} from 'colorita';
 import {rgbToHex, hexToRgb} from '../Utils';
 
 

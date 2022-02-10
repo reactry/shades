@@ -1,5 +1,3 @@
-import {roundOffComponent} from '../../Utils';
-
 import './NumberSlider.css';
 
 
