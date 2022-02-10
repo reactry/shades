@@ -10,13 +10,16 @@ import DownloadTab from './DownloadTab';
 
 const outputTabs = [
 	{
-		"title": "All"
+		"title": "All",
+		"letter": "A"
 	},
 	{
-		"title": "Split"
+		"title": "Split",
+		"letter": "S"
 	},
 	{
-		"title": "Download"
+		"title": "Download",
+		"letter": "D"
 	}
 ];
 

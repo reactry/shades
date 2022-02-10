@@ -8,10 +8,13 @@ export default function OutputTabBar ({
 	let tabItems = tabs.map((v, i) => {
 		if (v.hidden) return null;
 
-		let tabClass = "px-8 py-5 -mb-1 border-x-2 border-t-2 border-transparent duration-300";
-		tabClass += (i === currentTabIndex) ? " bg-slate-200 border-slate-600" : " cursor-pointer hover:bg-slate-200";
+		let tabClass = "px-6 py-4 border-x-2 border-t-2 border-transparent duration-300";
+		tabClass += (i === currentTabIndex) ? " -mb-1 bg-slate-300 border-slate-600" : " cursor-pointer hover:bg-slate-200";
 		return (
-			<div key={i} className={tabClass} onClick={() => setCurrentTabIndex(i)}>{v.title}</div>
+			<div key={i} className={tabClass} onClick={() => setCurrentTabIndex(i)}>
+				<div className="text-3xl md:hidden pb-2">{v.letter}</div>
+				<div className="text-xs md:text-base">{v.title}</div>
+			</div>
 		);
 	});
 

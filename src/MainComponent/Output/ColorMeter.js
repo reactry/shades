@@ -13,7 +13,7 @@ export default function ColorMeter ({
 
 		if (i === currentColorIndex) {
 			return (
-				<div key={i} className="h-20 grow -my-2" style={style}></div>
+				<div key={i} className="h-20 grow -my-2 rounded" style={style}></div>
 			);
 		} else {
 			return (
