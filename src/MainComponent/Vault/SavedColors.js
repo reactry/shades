@@ -15,7 +15,7 @@ export default function SavedColors ({
 
 	return (
 		<div className="SavedColors">
-			<h2 className="pt-2 pl-2 text-xl font-bold">Saved Colors</h2>
+			<h2 className="pt-2 pl-2 text-xl font-bold hidden">Saved Colors</h2>
 			<div className="flex flex-wrap py-4">
 				{savedColorItems}
 			</div>

@@ -4,12 +4,14 @@ import Row from './Row';
 
 
 export default function List ({
-	colors, length, title, currentColorIndex
+	colors, length, title, currentColorIndex,
+	setHexColor, saveColor
 }) {
 
 	let colorBoxItems = colors.map((color, i) => {
 		let props = {
 			...color,
+			setHexColor, saveColor,
 			active: (i === currentColorIndex)
 		};
 		return <Box key={i} {...props} />;
@@ -35,7 +37,7 @@ export default function List ({
 						{colorRowItems}
 					</div>
 				</div>
-				<div className="grow flex flex-wrap mx-auto md:pl-4 text-center">
+				<div className="grow flex flex-wrap items-start mx-auto md:pl-4 text-center">
 					{colorBoxItems}
 				</div>
 			</div>

@@ -58,7 +58,8 @@ export default function MainComponent ({settings}) {
 		toggleVault, openVaultTab, settings
 	};
 	let colorOutputProps = {
-		red, green, blue, hex, n, shadeNames
+		red, green, blue, hex, n, shadeNames,
+		setHexColor, saveColor
 	};
 
 	return (

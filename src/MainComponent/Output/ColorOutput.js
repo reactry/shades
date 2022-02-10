@@ -22,7 +22,8 @@ const outputTabs = [
 
 
 export default function ColorOutput ({
-	red, green, blue, hex, n, shadeNames
+	red, green, blue, hex, n, shadeNames,
+	setHexColor, saveColor
 }) {
 
 	const [currentTabIndex, setCurrentTabIndex] = React.useState(1);
@@ -43,17 +44,19 @@ export default function ColorOutput ({
 
 	function getCurrentOutputTab () {
 		let currentTabTitle = outputTabs[currentTabIndex].title;
+		let props = {n, setHexColor, saveColor};
+
 		if (currentTabTitle === "All") {
 			return (
 				<div>
-					<TintsAndShades colors={colors} n={n} />
+					<TintsAndShades colors={colors} {...props} />
 				</div>
 			);
 		} else if (currentTabTitle === "Split") {
 			return (
 				<div>
-					<Tints colors={colors.slice(0, n).reverse()} n={n} />
-					<Shades colors={colors.slice(-n)} n={n} />
+					<Tints colors={colors.slice(0, n).reverse()} {...props} />
+					<Shades colors={colors.slice(-n)} {...props} />
 				</div>
 			);
 		} else if (currentTabTitle === "Download") {
