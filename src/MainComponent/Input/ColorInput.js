@@ -213,7 +213,7 @@ export default function ColorInput ({
 	return (
 		<div className="ColorInput bg-slate-300 pb-12">
 			<div className="md:flex md:items-start max-w-5xl m-auto">
-				<div className="grow bg-white">
+				<div className="grow bg-slate-100 border-b border-x border-slate-400">
 					<TopTabBar {...topTabBarProps} />
 					<div className="pt-4">
 						{getCurrentTab()}

@@ -9,7 +9,7 @@ export default function TopTabBar ({
 		if (v.hidden) return null;
 
 		let tabClass = "grow px-2 py-6 md:py-4 duration-300";
-		tabClass += (i === currentTabIndex) ? " bg-white" : " cursor-pointer hover:bg-slate-200";
+		tabClass += (i === currentTabIndex) ? " bg-slate-100" : " cursor-pointer hover:bg-slate-200";
 		return (
 			<div key={i} className={tabClass} onClick={() => setCurrentTabIndex(i)}>{v.title}</div>
 		);
