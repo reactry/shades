@@ -23,7 +23,7 @@ export default function ColorMeter ({
 	});
 
 	return (
-		<div className="ColorMeter flex border-2 border-slate-300 mt-8 h-20">
+		<div className="ColorMeter flex border-2 border-slate-300 h-20">
 			{colorItems}
 		</div>
 	);

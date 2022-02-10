@@ -1,4 +1,3 @@
-import ColorMeter from './ColorMeter';
 import List from './List';
 
 
@@ -16,7 +15,6 @@ export default function TintsAndShades ({
 
 	return (
 		<div className="TintsAndShades">
-			<ColorMeter {...props} />
 			<List title="Tints and Shades" {...props} />
 		</div>
 	);

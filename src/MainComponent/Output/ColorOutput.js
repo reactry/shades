@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {rgbToHex, getTintsAndShades} from '../../Utils';
+import ColorMeter from './ColorMeter';
 import TintsAndShades from './TintsAndShades';
 import Tints from './Tints';
 import Shades from './Shades';
@@ -69,8 +70,16 @@ export default function ColorOutput ({
 		return null;
 	}
 
+	let colorMeterProps = {
+		colors,
+		currentColorIndex: n-1,
+		length: colors.length,
+		setHexColor, saveColor
+	};
+
 	return (
-		<div className="ColorOutput bg-slate-200 min-h-screen pb-20">
+		<div className="ColorOutput bg-slate-300 min-h-screen pb-20">
+			<ColorMeter {...colorMeterProps} />
 			<OutputTabBar {...outputTabBarProps} />
 			<div className="max-w-5xl mx-auto px-2">
 				{getCurrentOutputTab()}
