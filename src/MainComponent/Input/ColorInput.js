@@ -1,4 +1,5 @@
 import React from 'react';
+import {shadeX, tintX, toneX, mixX, hslToRgb} from 'colorita';
 
 import BigBox from './BigBox';
 import BigButton from '../../BigButton';
@@ -9,8 +10,6 @@ import NSelector from './NSelector';
 import HexTab from './HexTab';
 import RGBTab from './RGBTab';
 import HSLTab from './HSLTab';
-
-import {shadeX, tintX, toneX, mixX, hslToRgb} from '../../Utils';
 
 const tabs = [
 	{

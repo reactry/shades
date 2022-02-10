@@ -1,6 +1,6 @@
 import React from 'react';
+import {rgbToHex, getTintsAndShades} from 'colorita';
 
-import {rgbToHex, getTintsAndShades} from '../../Utils';
 import ColorMeter from './ColorMeter';
 import TintsAndShades from './TintsAndShades';
 import Tints from './Tints';

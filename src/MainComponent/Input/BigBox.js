@@ -1,4 +1,4 @@
-import {rgbToHex} from '../../Utils';
+import {rgbToHex} from 'colorita';
 
 import BigButton from '../../BigButton';
 import ColorButton from './ColorButton';

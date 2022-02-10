@@ -1,4 +1,4 @@
-import {hexToRgb} from '../../Utils';
+import {hexToRgb} from 'colorita';
 
 
 

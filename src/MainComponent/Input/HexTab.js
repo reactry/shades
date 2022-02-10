@@ -1,6 +1,5 @@
 import React from 'react';
-
-import {hexToRgb} from '../../Utils';
+import {hexToRgb} from 'colorita';
 
 
 

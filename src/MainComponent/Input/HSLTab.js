@@ -1,6 +1,5 @@
 import React from 'react';
-
-import {rgbToHsl} from '../../Utils';
+import {rgbToHsl} from 'colorita';
 
 import NumberSlider from './NumberSlider';
 
