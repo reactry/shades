@@ -32,7 +32,7 @@ export default function List ({
 				<span className="px-3">{title}</span>
 			</h1>
 			<div className="md:flex align-top items-start">
-				<div className="py-2">
+				<div className="pt-1 pb-8">
 					<div className="shadow-md rounded">
 						{colorRowItems}
 					</div>

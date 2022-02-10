@@ -19,7 +19,7 @@ export default function Box ({
 		backgroundColor: hex
 	};
 
-	let boxClasses = "Box flex mr-2 my-3 border-y-[6px] text-sm font-bold text-slate-700 rounded select-none overflow-hidden text-center duration-300";
+	let boxClasses = "Box flex mr-2 mb-6 border-y-[6px] text-sm font-bold text-slate-700 rounded select-none overflow-hidden text-center duration-300";
 	boxClasses += (active || showOptions) ? " border-blue-800" : " hover:border-blue-600";
 
 	return (

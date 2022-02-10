@@ -24,7 +24,7 @@ export default function Row ({
 	return (
 		<div className={rowClasses}>
 			<div onClick={() => setShowInfo(showInfo => !showInfo)} style={style}
-				className="flex px-4 py-2 cursor-pointer">
+				className="flex px-4 py-2 cursor-pointer duration-300 hover:px-8">
 				<div className="w-1/2 capitalize">{shade}</div>
 				<div className="w-1/2 text-right">{hex}</div>
 			</div>

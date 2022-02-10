@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## `0.6.0` - `2022-02-10`
+* implemented `HexTab` functionality
+* added `Info` section with `RGB` and `HSL` display to color `Row`
+* added `Options` section with 4 buttons to color `Box`
+* removed `h`, `s` and `l` state variables
+* updated styles for `InputComponent` tabs
+* allowing the user to fix individual `RGB` components
+
+
 ## `0.5.0` - `2022-02-10`
 * implemented `HSL` sliders
 * implemented utils `rgbToHsl()` and `hslToRgb()`
