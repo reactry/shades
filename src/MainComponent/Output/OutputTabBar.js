@@ -8,7 +8,7 @@ export default function OutputTabBar ({
 	let tabItems = tabs.map((v, i) => {
 		if (v.hidden) return null;
 
-		let tabClass = "px-6 md:px-8 pt-4 pb-3 border-x-2 border-t-2 border-transparent duration-300";
+		let tabClass = "px-5 grow md:grow-0 md:px-8 pt-4 pb-3 border-x-2 border-t-2 border-transparent duration-300";
 		tabClass += (i === currentTabIndex) ? " -mb-1 bg-slate-200 border-slate-600" : " cursor-pointer hover:bg-slate-200";
 		return (
 			<div key={i} className={tabClass} onClick={() => setCurrentTabIndex(i)}>

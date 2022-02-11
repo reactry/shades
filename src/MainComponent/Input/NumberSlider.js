@@ -7,7 +7,7 @@ export default function NumberSlider ({
 	bg, border, title
 }) {
 
-	let sliderClass = `appearance-none border-2 border-transparent ${bg} ${border} outline-none w-full form-range rounded`;
+	let sliderClass = `appearance-none border-2 border-slate-600 ${bg} ${border} outline-none w-full form-range`;
 
 	return (
 		<div className="NumberSlider px-6 py-3 font-bold text-sm outline-none">

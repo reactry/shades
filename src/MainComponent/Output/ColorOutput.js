@@ -2,10 +2,12 @@ import React from 'react';
 import colorita from 'colorita';
 
 import ColorMeter from './ColorMeter';
+import OutputTabBar from './OutputTabBar';
+
 import TintsAndShades from './TintsAndShades';
 import Tints from './Tints';
 import Shades from './Shades';
-import OutputTabBar from './OutputTabBar';
+import PaletteTab from './PaletteTab';
 import DownloadTab from './DownloadTab';
 
 const outputTabs = [
@@ -16,6 +18,10 @@ const outputTabs = [
 	{
 		"title": "Split",
 		"letter": "S"
+	},
+	{
+		"title": "Palettes",
+		"letter": "P"
 	},
 	{
 		"title": "Download",
@@ -64,6 +70,12 @@ export default function ColorOutput ({
 				<div>
 					<Tints colors={colors.slice(0, n).reverse()} {...props} />
 					<Shades colors={colors.slice(-n)} {...props} />
+				</div>
+			);
+		} else if (currentTabTitle === "Palettes") {
+			return (
+				<div>
+					<PaletteTab colors={colors} n={n} />
 				</div>
 			);
 		} else if (currentTabTitle === "Download") {
