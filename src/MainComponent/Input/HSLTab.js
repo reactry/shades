@@ -36,7 +36,7 @@ export default function HSLTab ({
 		max: 359,
 		x: h,
 		setX: setH,
-		bg: "bg-slate-500",
+		bg: "HueSlider",
 		border: "hover:border-slate-700",
 		title: "Green"
 	};
@@ -52,6 +52,7 @@ export default function HSLTab ({
 		...commonProps,
 		x: s,
 		setX: setS,
+		bg: "SaturationSlider",
 		title: "Saturation"
 	};
 
@@ -59,6 +60,7 @@ export default function HSLTab ({
 		...commonProps,
 		x: l,
 		setX: setL,
+		bg: "LightnessSlider",
 		title: "Lightness"
 	};
 

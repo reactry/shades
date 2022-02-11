@@ -1,5 +1,5 @@
 
-div.NumberSlider > input{
+div.NumberSlider > input {
 	cursor: pointer;
 }
 
@@ -11,6 +11,34 @@ div.NumberSlider > input::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	background: #fafafa;
 	border: 2px solid #333;
+}
+
+input.HueSlider {
+	background-color: red;
+	background: linear-gradient(
+		to right,
+		hsl(0, 100%, 50%), 
+		hsl(30, 100%, 50%), 
+		hsl(60, 100%, 50%), 
+		hsl(90, 100%, 50%), 
+		hsl(120, 100%, 50%), 
+		hsl(150, 100%, 50%), 
+		hsl(180, 100%, 50%), 
+		hsl(210, 100%, 50%), 
+		hsl(240, 100%, 50%), 
+		hsl(270, 100%, 50%), 
+		hsl(300, 100%, 50%), 
+		hsl(330, 100%, 50%),
+		hsl(360, 100%, 50%)
+	);
+}
+
+input.SaturationSlider {
+	background: linear-gradient(to right, #888, red);
+}
+
+input.LightnessSlider {
+	background: linear-gradient(to right, #000, #888, #fff);
 }
 
 
