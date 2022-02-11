@@ -4,26 +4,26 @@
 
 function getContrastClass (contrast) {
 	if (contrast < 3) {
-		return "border-red-400";
+		return "border-red-600";
 	} else if (contrast < 4.5) {
-		return "border-yellow-400";
+		return "border-red-400";
 	} else if (contrast < 7) {
-		return "border-green-300";
+		return "border-green-400";
 	} else {
-		return "border-green-500";
+		return "border-green-600";
 	}
 }
 
 function getContrastComment (contrast) {
 	let baseClass = "px-2 py-1";
 	if (contrast < 3) {
-		return <div className={baseClass + " bg-red-400"}>BAD</div>;
+		return <div className={baseClass + " bg-red-600"}>POOR</div>;
 	} else if (contrast < 4.5) {
-		return <div className={baseClass + " bg-yellow-500"}>OK</div>;
+		return <div className={baseClass + " bg-red-400"}>BAD</div>;
 	} else if (contrast < 7) {
-		return <div className={baseClass + " bg-green-300"}>GOOD</div>;
+		return <div className={baseClass + " bg-green-400"}>GOOD</div>;
 	} else {
-		return <div className={baseClass + " bg-green-500"}>EXCELLENT</div>;
+		return <div className={baseClass + " bg-green-600"}>EXCELLENT</div>;
 	}
 }
 
