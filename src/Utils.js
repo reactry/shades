@@ -5,7 +5,7 @@ export function getRelativeLuminance (r, g, b) {
 	[r, g, b] = [r, g, b].map((c) => {
 		c /= 255;
 
-		if (c <= 0.3928) {
+		if (c <= 0.03928) {
 			return c / 12.92;
 		} else {
 			return Math.pow((c + 0.055) / 1.055, 2.4);
