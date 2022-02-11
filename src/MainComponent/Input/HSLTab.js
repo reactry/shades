@@ -33,7 +33,7 @@ export default function HSLTab ({
 
 	let hueSliderProps = {
 		min: 0,
-		max: 360,
+		max: 359,
 		x: h,
 		setX: setH,
 		bg: "bg-slate-500",
