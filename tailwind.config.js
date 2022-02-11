@@ -3,7 +3,8 @@ module.exports = {
     "src/*.js",
     "src/MainComponent/*.js",
     "src/MainComponent/*/*.js",
-    "src/MainComponent/*/*/*.js"
+    "src/MainComponent/*/*/*.js",
+    "src/MainComponent/*/*/*/*.js"
   ],
   theme: {
     extend: {},
