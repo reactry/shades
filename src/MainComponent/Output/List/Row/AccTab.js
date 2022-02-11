@@ -15,15 +15,15 @@ function getContrastClass (contrast) {
 }
 
 function getContrastComment (contrast) {
-	let baseClass = "inline-block px-3 py-1 rounded";
+	let baseClass = "px-2 py-1";
 	if (contrast < 3) {
-		return <span className={baseClass + " bg-red-400"}>BAD</span>;
+		return <div className={baseClass + " bg-red-400"}>BAD</div>;
 	} else if (contrast < 4.5) {
-		return <span className={baseClass + " bg-yellow-400"}>OK</span>;
+		return <div className={baseClass + " bg-yellow-500"}>OK</div>;
 	} else if (contrast < 7) {
-		return <span className={baseClass + " bg-green-300"}>GOOD</span>;
+		return <div className={baseClass + " bg-green-300"}>GOOD</div>;
 	} else {
-		return <span className={baseClass + " bg-green-500"}>EXCELLENT</span>;
+		return <div className={baseClass + " bg-green-500"}>EXCELLENT</div>;
 	}
 }
 
@@ -35,9 +35,11 @@ function accTextBlock (bg, fg, contrast) {
 
 	return (
 		<div className="py-2">
-			<div className="py-4 mb-2 rounded" style={style}>{fg} on {bg}</div>
-			<div className="text-left text-sm">
-				{getContrastComment(contrast)}
+			<div className="flex py-2 rounded" style={style}>
+				<div className="grow px-4">{fg} on {bg}</div>
+				<div className="text-sm font-bold px-2 text-white">
+					{getContrastComment(contrast)}
+				</div>
 			</div>
 		</div>
 	);
@@ -68,7 +70,7 @@ export default function AccTab ({
 					<div className={cH4}>Black</div>
 				</div>
 			</div>
-			<div className="px-4">
+			<div className="px-4 text-left">
 				{accTextBlock("white", hex, contrastWhite)}
 				{accTextBlock(hex, "white", contrastWhite)}
 				{accTextBlock("black", hex, contrastBlack)}

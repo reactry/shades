@@ -54,7 +54,7 @@ export default function Row ({
 		}
 	}
 
-	let rowClasses = "md:w-72 font-bold";
+	let rowClasses = "md:w-80 font-bold";
 
 	return (
 		<div className={rowClasses}>
