@@ -33,11 +33,19 @@ input.HueSlider {
 	);
 }
 
-input.SaturationSlider {
+input.HSLSaturationSlider {
 	background: linear-gradient(to right, #888, red);
 }
 
 input.LightnessSlider {
+	background: linear-gradient(to right, #000, #888, #fff);
+}
+
+input.HSVSaturationSlider {
+	background: linear-gradient(to right, #fff, red);
+}
+
+input.ValueSlider {
 	background: linear-gradient(to right, #000, #888, #fff);
 }
 

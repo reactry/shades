@@ -10,6 +10,7 @@ import NSelector from './NSelector';
 import HexTab from './HexTab';
 import RGBTab from './RGBTab';
 import HSLTab from './HSLTab';
+import HSVTab from './HSVTab';
 
 const tabs = [
 	{
@@ -20,6 +21,9 @@ const tabs = [
 	},
 	{
 		"title": "HSL"
+	},
+	{
+		"title": "HSV"
 	}
 ];
 
@@ -203,6 +207,12 @@ export default function ColorInput ({
 				setHSL
 			};
 			return <HSLTab {...hslProps} />;
+		} else if (currentTabTitle === "HSV") {
+			let hsvProps = {
+				...commonProps,
+				setHSL
+			};
+			return <HSVTab {...hsvProps} />;
 		}
 	}
 
