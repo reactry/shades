@@ -1,4 +1,4 @@
-import {hexToRgb} from 'colorita';
+import colorita from 'colorita';
 
 
 
@@ -7,7 +7,7 @@ export default function ColorButton ({title, hex, mixColor}) {
 		backgroundColor: hex
 	};
 
-	let [r, g, b] = hexToRgb(hex);
+	let [r, g, b] = colorita.hexToRgb(hex);
 
 	function handleClick () {
 		mixColor(r, g, b);

@@ -1,5 +1,5 @@
 import React from 'react';
-import {shadeX, tintX, toneX, mixX, hslToRgb} from 'colorita';
+import colorita from 'colorita';
 
 import BigBox from './BigBox';
 import BigButton from '../../BigButton';
@@ -63,15 +63,15 @@ export default function ColorInput ({
 	}
 
 	function shadeColor () {
-		transformColor(shadeX);
+		transformColor(colorita.shadeX);
 	}
 
 	function tintColor () {
-		transformColor(tintX);
+		transformColor(colorita.tintX);
 	}
 
 	function toneColor () {
-		transformColor(toneX);
+		transformColor(colorita.toneX);
 	}
 
 	function flipColor () {
@@ -83,6 +83,7 @@ export default function ColorInput ({
 	}
 
 	function mixColor (r, g, b) {
+		const mixX = colorita.mixX;
 		addColorToHistory();
 		setRedIf(mixX(red, r));
 		setGreenIf(mixX(green, g));
@@ -97,7 +98,7 @@ export default function ColorInput ({
 	}
 
 	function setHSL (h, s, l) {
-		let [r, g, b] = hslToRgb(h, s, l);
+		let [r, g, b] = colorita.hslToRgb(h, s, l);
 		setRGB(r, g, b);
 	}
 

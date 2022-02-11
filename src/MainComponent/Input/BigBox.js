@@ -1,4 +1,4 @@
-import {rgbToHex} from 'colorita';
+import colorita from 'colorita';
 
 import BigButton from '../../BigButton';
 import ColorButton from './ColorButton';
@@ -12,7 +12,7 @@ export default function BigBox ({
 	basicColors, mixColor
 }) {
 
-	let hex = rgbToHex(red, green, blue);
+	let hex = colorita.rgbToHex(red, green, blue);
 	let style = {
 		backgroundColor: hex
 	};

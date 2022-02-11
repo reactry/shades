@@ -1,5 +1,5 @@
 import React from 'react';
-import {rgbToHsl} from 'colorita';
+import colorita from 'colorita';
 
 import NumberSlider from './NumberSlider';
 
@@ -10,7 +10,7 @@ export default function HSLTab ({
 	setHSL
 }) {
 
-	let [h, s, l] = rgbToHsl(red, green, blue);
+	let [h, s, l] = colorita.rgbToHsl(red, green, blue);
 
 	function updateColor () {
 		setHSL(h, s, l);

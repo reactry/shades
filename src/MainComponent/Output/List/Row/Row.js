@@ -1,5 +1,5 @@
 import React from 'react';
-import {rgbToHsl} from 'colorita';
+import colorita from 'colorita';
 
 import RowTabBar from './RowTabBar';
 
@@ -31,18 +31,13 @@ export default function Row ({
 		rowTabs, currentRowTabIndex, setCurrentRowTabIndex
 	};
 
-	let tabProps = {
-		r, g, b, hex, shade,
-		contrastWhite, contrastBlack
-	};
-
 	let [showInfo, setShowInfo] = React.useState(false);
 
 	let style = {
 		backgroundColor: hex
 	};
 
-	let [h, s, l] = rgbToHsl(r, g, b);
+	let [h, s, l] = colorita.rgbToHsl(r, g, b);
 	function getCurrentRowTab () {
 		let currentRowTabTitle = rowTabs[currentRowTabIndex].title;
 		let rowTabProps = {
@@ -60,10 +55,6 @@ export default function Row ({
 	}
 
 	let rowClasses = "md:w-72 font-bold";
-
-	let cRGB = "grow basis-0 bg-slate-200 pt-3 pb-2";
-	let cH2 = "text-slate-700 text-2xl";
-	let cH4 = "text-slate-400 text-xs";
 
 	return (
 		<div className={rowClasses}>

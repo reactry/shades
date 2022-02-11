@@ -6,8 +6,6 @@ export default function InfoTab ({
 	contrastWhite, contrastBlack
 }) {
 
-	let rowClasses = "md:w-72 font-bold";
-
 	let cRGB = "grow basis-0 bg-slate-200 pt-3 pb-2";
 	let cH2 = "text-slate-700 text-2xl";
 	let cH4 = "text-slate-400 text-xs";

@@ -1,5 +1,5 @@
 import React from 'react';
-import {hexToRgb} from 'colorita';
+import colorita from 'colorita';
 
 
 
@@ -27,7 +27,7 @@ export default function HexTab ({
 		}
 
 		setError(false);
-		let [r, g, b] = hexToRgb(hexInput);
+		let [r, g, b] = colorita.hexToRgb(hexInput);
 		setRGB(r, g, b);
 	}
 

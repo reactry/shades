@@ -1,5 +1,5 @@
 import React from 'react';
-import {rgbToHex, hexToRgb} from 'colorita';
+import colorita from 'colorita';
 
 import Vault from './Vault';
 import ColorInput from './Input';
@@ -11,9 +11,9 @@ export default function MainComponent ({settings}) {
 	const [red, setRed] = React.useState(120);
 	const [green, setGreen] = React.useState(70);
 	const [blue, setBlue] = React.useState(230);
-	const hex = rgbToHex(red, green, blue);
+	const hex = colorita.rgbToHex(red, green, blue);
 	function setHexColor (hex) {
-		let [r, g, b] = hexToRgb(hex);
+		let [r, g, b] = colorita.hexToRgb(hex);
 		setRed(r); setGreen(g); setBlue(b);
 	}
 
