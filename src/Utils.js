@@ -1,7 +1,7 @@
 
 // moved utils to colorita package
 
-function HSL2HSV (H, S, L) {
+export function HSL2HSV (H, S, L) {
 	let V = Math.floor(L + (S*Math.min(L, 100-L)/100));
 	let S2 = 0;
 	if (V !== 0) {
@@ -10,7 +10,7 @@ function HSL2HSV (H, S, L) {
 	return [H, S2, V];
 }
 
-function HSV2HSL (H, S, V) {
+export function HSV2HSL (H, S, V) {
 	let L = Math.floor(V - V*S/200);
 	let S2 = 0;
 	if (L !== 0 && L !== 100) {

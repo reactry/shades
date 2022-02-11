@@ -1,5 +1,6 @@
 import React from 'react';
 import colorita from 'colorita';
+import {HSL2HSV, HSV2HSL} from '../../Utils';
 
 import BigBox from './BigBox';
 import BigButton from '../../BigButton';
@@ -103,6 +104,12 @@ export default function ColorInput ({
 
 	function setHSL (h, s, l) {
 		let [r, g, b] = colorita.hslToRgb(h, s, l);
+		setRGB(r, g, b);
+	}
+
+	function setHSV (h, s, v) {
+		let [H, S, L] = HSV2HSL(h, s, v);
+		let [r, g, b] = colorita.hslToRgb(H, S, L);
 		setRGB(r, g, b);
 	}
 
@@ -210,7 +217,7 @@ export default function ColorInput ({
 		} else if (currentTabTitle === "HSV") {
 			let hsvProps = {
 				...commonProps,
-				setHSL
+				setHSV
 			};
 			return <HSVTab {...hsvProps} />;
 		}

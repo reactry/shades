@@ -2,39 +2,40 @@ import React from 'react';
 import colorita from 'colorita';
 
 import NumberSlider from './NumberSlider';
+import {HSL2HSV, HSV2HSL} from '../../Utils';
 
 
 
 export default function HSVTab ({
 	red, green, blue, hex,
-	setHSL
+	setHSV
 }) {
 
-	let [h, s, v] = colorita.rgbToHsl(red, green, blue);
+	let [H, S, V] = HSL2HSV(...colorita.rgbToHsl(red, green, blue));
 
 	function updateColor () {
-		setHSL(h, s, v);
+		setHSV(H, S, V);
 	}
 
 	function setH (value) {
-		h = value;
+		H = value;
 		updateColor();
 	}
 
 	function setS (value) {
-		s = value;
+		S = value;
 		updateColor();
 	}
 
 	function setV (value) {
-		v = value;
+		V = value;
 		updateColor();
 	}
 
 	let hueSliderProps = {
 		min: 0,
 		max: 359,
-		x: h,
+		x: H,
 		setX: setH,
 		bg: "HueSlider",
 		border: "hover:border-slate-700",
@@ -50,7 +51,7 @@ export default function HSVTab ({
 
 	let saturationSliderProps = {
 		...commonProps,
-		x: s,
+		x: S,
 		setX: setS,
 		bg: "HSVSaturationSlider",
 		title: "Saturation"
@@ -58,7 +59,7 @@ export default function HSVTab ({
 
 	let valueSliderProps = {
 		...commonProps,
-		x: v,
+		x: V,
 		setX: setV,
 		bg: "ValueSlider",
 		title: "Value"
@@ -71,21 +72,21 @@ export default function HSVTab ({
 			<div className="flex text-center font-bold text-slate-700 px-8 pt-4 space-x-1 max-w-md mx-auto">
 				<div className={hsvBoxClass}>
 					<div className="text-4xl relative left-2">
-						<span>{h}</span>
+						<span>{H}</span>
 						<span>&deg;</span>
 					</div>
 					<div className="text-sm py-1">Hue</div>
 				</div>
 				<div className={hsvBoxClass}>
 					<div className="relative left-2">
-						<span className="text-4xl">{s}</span>
+						<span className="text-4xl">{S}</span>
 						<span className="relative bottom-2 pl-1">%</span>
 					</div>
 					<div className="text-sm py-1">Saturation</div>
 				</div>
 				<div className={hsvBoxClass}>
 					<div className="relative left-2">
-						<span className="text-4xl">{v}</span>
+						<span className="text-4xl">{V}</span>
 						<span className="relative bottom-2 pl-1">%</span>
 					</div>
 					<div className="text-sm py-1">Value</div>
