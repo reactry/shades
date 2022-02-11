@@ -9,7 +9,7 @@ export default function CopyTab ({
 	let textDivClass = "py-3";
 	let textClass = "bg-slate-200 px-3 py-2 rounded";
 	let rgbText = `rgb (${r}, ${g}, ${b})`;
-	let hslText = `hsl (${r}, ${s}%, ${l}%)`;
+	let hslText = `hsl (${h}, ${s}%, ${l}%)`;
 
 	return (
 		<div className="CopyTab">
