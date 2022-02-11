@@ -1,6 +1,8 @@
 import React from 'react';
 import {rgbToHex, getTintsAndShades} from 'colorita';
 
+import {getContrastRounded} from '../../Utils';
+
 import ColorMeter from './ColorMeter';
 import TintsAndShades from './TintsAndShades';
 import Tints from './Tints';
@@ -39,9 +41,12 @@ export default function ColorOutput ({
 	let rgbColors = getTintsAndShades(red, green, blue, n);
 	let colorNames = shadeNames[rgbColors.length];
 	let colors = rgbColors.map((v, i) => {
+		let c = [v.r, v.g, v.b];
 		return {
 			"shade": colorNames[i],
 			"hex": rgbToHex(v.r, v.g, v.b),
+			"contrastWhite": getContrastRounded(c, [255, 255, 255]),
+			"contrastBlack": getContrastRounded(c, [0, 0, 0]),
 			...v
 		};
 	});

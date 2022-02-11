@@ -4,7 +4,8 @@ import {rgbToHsl} from 'colorita';
 
 
 export default function Row ({
-	r, g, b, hex, shade, active
+	r, g, b, hex, shade, active,
+	contrastWhite, contrastBlack
 }) {
 
 	let [showInfo, setShowInfo] = React.useState(false);
@@ -60,6 +61,17 @@ export default function Row ({
 					<div className={cRGB}>
 						<div className={cH2}>{l}</div>
 						<div className={cH4}>Lightness</div>
+					</div>
+				</div>
+
+				<div className="flex space-x-1 font-bold bg-slate-100 py-2">
+					<div className={cRGB}>
+						<div className={cH2}>{contrastWhite}</div>
+						<div className={cH4}>White</div>
+					</div>
+					<div className={cRGB}>
+						<div className={cH2}>{contrastBlack}</div>
+						<div className={cH4}>Black</div>
 					</div>
 				</div>
 
