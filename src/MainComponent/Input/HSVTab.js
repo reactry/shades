@@ -2,7 +2,7 @@ import React from 'react';
 import colorita from 'colorita';
 
 import NumberSlider from './NumberSlider';
-import {HSL2HSV, HSV2HSL} from '../../Utils';
+import {HSL2HSV} from '../../Utils';
 
 
 

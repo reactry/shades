@@ -1,6 +1,6 @@
 import React from 'react';
 import colorita from 'colorita';
-import {HSL2HSV, HSV2HSL} from '../../Utils';
+import {HSV2HSL} from '../../Utils';
 
 import BigBox from './BigBox';
 import BigButton from '../../BigButton';
@@ -232,6 +232,9 @@ export default function ColorInput ({
 			<div className="md:flex md:items-start max-w-5xl m-auto">
 				<div className="grow bg-slate-100 border-b border-x border-slate-400">
 					<TopTabBar {...topTabBarProps} />
+					<div className="px-8 pt-6 -mb-4 md:hidden">
+						<div className="h-24" style={{backgroundColor: hex}}></div>
+					</div>
 					<div className="pt-4">
 						{getCurrentTab()}
 					</div>
