@@ -41,6 +41,16 @@
 			"title": "Generating shades",
 			"description": "Thanks to Michael Edelstone (creator of maketintsandshades.com) for sharing the algorithm for generating shades of a color.",
 			"url": "https://github.com/edelstone/tints-and-shades"
+		},
+		{
+			"title": "Handling HSL",
+			"description": "Thanks to Jon Kantner for his meticulous article at css-tricks.com explaining how to convert between RGB and HSL and other formats.",
+			"url": "https://css-tricks.com/converting-color-spaces-in-javascript/"
+		},
+		{
+			"title": "Contrast - stackoverflow",
+			"description": "Thanks to kirilloid and others on stackoverflow for sharing the code for calculating the contrast between two colors.",
+			"url": "https://stackoverflow.com/questions/9733288/how-to-programmatically-calculate-the-contrast-ratio-between-two-colors"
 		}
 	],
 
