@@ -32,7 +32,7 @@ const outputTabs = [
 
 
 export default function ColorOutput ({
-	red, green, blue, hex, n, shadeNames,
+	red, green, blue, hex, n, shadeNames, colors,
 	setHexColor, saveColor
 }) {
 
@@ -42,18 +42,7 @@ export default function ColorOutput ({
 		currentTabIndex, setCurrentTabIndex
 	};
 
-	let rgbColors = colorita.getTintsAndShades(red, green, blue, n);
-	let colorNames = shadeNames[rgbColors.length];
-	let colors = rgbColors.map((v, i) => {
-		let c = [v.r, v.g, v.b];
-		return {
-			"shade": colorNames[i],
-			"hex": colorita.rgbToHex(v.r, v.g, v.b),
-			"contrastWhite": colorita.getContrastRounded(c, [255, 255, 255]),
-			"contrastBlack": colorita.getContrastRounded(c, [0, 0, 0]),
-			...v
-		};
-	});
+	
 
 	function getCurrentOutputTab () {
 		let currentTabTitle = outputTabs[currentTabIndex].title;
@@ -97,11 +86,13 @@ export default function ColorOutput ({
 
 	return (
 		<div className="ColorOutput bg-slate-200 min-h-screen pb-20">
-			<ColorMeter {...colorMeterProps} />
 			<OutputTabBar {...outputTabBarProps} />
+			<div className="h-8"></div>
+			<ColorMeter {...colorMeterProps} />
 			<div className="max-w-5xl mx-auto px-2">
 				{getCurrentOutputTab()}
 			</div>
+			<ColorMeter {...colorMeterProps} />
 		</div>
 	);
 }

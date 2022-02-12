@@ -44,6 +44,19 @@ export default function MainComponent ({settings}) {
 
 	const shadeNames = settings.shadeNames;
 
+	const rgbColors = colorita.getTintsAndShades(red, green, blue, n);
+	const colorNames = shadeNames[rgbColors.length];
+	const colors = rgbColors.map((v, i) => {
+		let c = [v.r, v.g, v.b];
+		return {
+			"shade": colorNames[i],
+			"hex": colorita.rgbToHex(v.r, v.g, v.b),
+			"contrastWhite": colorita.getContrastRounded(c, [255, 255, 255]),
+			"contrastBlack": colorita.getContrastRounded(c, [0, 0, 0]),
+			...v
+		};
+	});
+
 	let vaultProps = {
 		colorHistory, setColorHistory,
 		savedColors, setSavedColors,
@@ -54,10 +67,10 @@ export default function MainComponent ({settings}) {
 		red, green, blue, hex, n,
 		setRed, setGreen, setBlue, setN,
 		saveColor, addColorToHistory,
-		toggleVault, openVaultTab, settings
+		toggleVault, openVaultTab, settings, colors
 	};
 	let colorOutputProps = {
-		red, green, blue, hex, n, shadeNames,
+		red, green, blue, hex, n, shadeNames, colors,
 		setHexColor, saveColor
 	};
 

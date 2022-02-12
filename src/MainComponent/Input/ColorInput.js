@@ -1,6 +1,8 @@
 import React from 'react';
 import colorita from 'colorita';
 
+import BackgroundStrip from './BackgroundStrip';
+
 import BigBox from './BigBox';
 import BigButton from '../../BigButton';
 
@@ -33,7 +35,7 @@ export default function ColorInput ({
 	red, green, blue, hex, n,
 	setRed, setGreen, setBlue, setN,
 	saveColor, addColorToHistory,
-	toggleVault, openVaultTab, settings
+	toggleVault, openVaultTab, settings, colors
 }) {
 
 	const [currentTabIndex, setCurrentTabIndex] = React.useState(1);
@@ -227,8 +229,9 @@ export default function ColorInput ({
 	};
 
 	return (
-		<div className="ColorInput bg-slate-300">
-			<div className="md:flex md:items-start max-w-5xl m-auto">
+		<div className="ColorInput bg-slate-300 relative min-h-screen">
+			<BackgroundStrip colors={colors} />
+			<div className="md:flex md:items-start max-w-5xl m-auto relative">
 				<div className="grow bg-slate-100 border-b border-x border-slate-400">
 					<TopTabBar {...topTabBarProps} />
 					<div className="px-8 pt-6 -mb-4 md:hidden">

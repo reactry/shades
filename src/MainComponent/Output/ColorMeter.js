@@ -13,17 +13,17 @@ export default function ColorMeter ({
 
 		if (i === currentColorIndex) {
 			return (
-				<div key={i} className="h-20 grow -my-2 rounded" style={style}></div>
+				<div key={i} className="grow -my-2 rounded" style={style}></div>
 			);
 		} else {
 			return (
-				<div key={i} className="h-16 grow duration-300 cursor-pointer hover:px-4" style={style} onClick={() => setHexColor(c.hex)}></div>
+				<div key={i} className="h-16 md:h-28 grow duration-300 cursor-pointer hover:px-4" style={style} onClick={() => setHexColor(c.hex)}></div>
 			);
 		}
 	});
 
 	return (
-		<div className="ColorMeter flex border-2 bg-slate-300 border-slate-300 h-20">
+		<div className="ColorMeter flex bg-slate-200 border-slate-300">
 			{colorItems}
 		</div>
 	);
