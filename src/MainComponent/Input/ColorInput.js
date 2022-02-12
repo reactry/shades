@@ -5,31 +5,6 @@ import BackgroundStrip from './BackgroundStrip';
 import FormatsPane from './FormatsPane';
 import ControlsPane from './ControlsPane';
 
-import BigButton from '../../BigButton';
-
-import TopTabBar from './TopTabBar';
-import NSelector from './NSelector';
-
-import HexTab from './HexTab';
-import RGBTab from './RGBTab';
-import HSLTab from './HSLTab';
-import HSVTab from './HSVTab';
-
-const tabs = [
-	{
-		"title": "Hex"
-	},
-	{
-		"title": "RGB"
-	},
-	{
-		"title": "HSL"
-	},
-	{
-		"title": "HSV"
-	}
-];
-
 
 
 export default function ColorInput ({
@@ -38,11 +13,6 @@ export default function ColorInput ({
 	saveColor, addColorToHistory,
 	toggleVault, openVaultTab, settings, colors
 }) {
-
-	const [currentTabIndex, setCurrentTabIndex] = React.useState(1);
-	let topTabBarProps = {
-		tabs, currentTabIndex, setCurrentTabIndex
-	};
 
 	const [redIsFixed, setRedIsFixed] = React.useState(false);
 	const [greenIsFixed, setGreenIsFixed] = React.useState(false);
@@ -114,6 +84,17 @@ export default function ColorInput ({
 		let [r, g, b] = colorita.hslToRgb(H, S, L);
 		setRGB(r, g, b);
 	}
+
+	const formatsPaneProps = {
+		red, green, blue, hex, n,
+		setRed, setGreen, setBlue,
+		setRedIsFixed, setGreenIsFixed, setBlueIsFixed, setN,
+		redIsFixed, greenIsFixed, blueIsFixed,
+		setRedIsFixed, setGreenIsFixed, setBlueIsFixed,
+		setRGB, setHSL, setHSV,
+		saveColor, addColorToHistory,
+		toggleVault, openVaultTab, settings, colors
+	};
 
 	const basicColors = settings.basicColors;
 	const controlsPaneProps = {
@@ -190,64 +171,11 @@ export default function ColorInput ({
 		keydownEvent
 	]);
 
-	function getCurrentTab () {
-		let currentTabTitle = tabs[currentTabIndex].title;
-		let commonProps = {
-			red, green, blue, hex
-		};
-
-		if (currentTabTitle === "Hex") {
-			let hexProps = {
-				...commonProps,
-				setRGB
-			};
-			return <HexTab {...hexProps} />;
-		} else if (currentTabTitle === "RGB") {
-			let rgbProps = {
-				...commonProps,
-				setRed, setGreen, setBlue,
-				redIsFixed, greenIsFixed, blueIsFixed,
-				setRedIsFixed, setGreenIsFixed, setBlueIsFixed
-			};
-			return <RGBTab {...rgbProps} />;
-		} else if (currentTabTitle === "HSL") {
-			let hslProps = {
-				...commonProps,
-				setHSL
-			};
-			return <HSLTab {...hslProps} />;
-		} else if (currentTabTitle === "HSV") {
-			let hsvProps = {
-				...commonProps,
-				setHSV
-			};
-			return <HSVTab {...hsvProps} />;
-		}
-	}
-
-	let nSelectorProps = {
-		n, setN, maxN: 10
-	};
-
 	return (
 		<div className="ColorInput bg-slate-300 relative min-h-screen">
 			<BackgroundStrip colors={colors} />
 			<div className="md:flex md:items-start max-w-5xl m-auto relative">
-				<div className="grow bg-slate-100 border-b border-x border-slate-400">
-					<TopTabBar {...topTabBarProps} />
-					<div className="px-8 pt-6 -mb-4 md:hidden">
-						<div className="h-24" style={{backgroundColor: hex}}></div>
-					</div>
-					<div className="pt-4">
-						{getCurrentTab()}
-					</div>
-					<NSelector {...nSelectorProps} />
-					<div className="flex px-4 py-4 bg-slate-300">
-						<BigButton title="Curated" handleClick={() => openVaultTab(0)} />
-						<BigButton title="History" handleClick={() => openVaultTab(1)} />
-						<BigButton title="Saved" handleClick={() => openVaultTab(2)} />
-					</div>
-				</div>
+				<FormatsPane {...formatsPaneProps} />
 				<ControlsPane {...controlsPaneProps} />
 			</div>
 		</div>
