@@ -38,8 +38,10 @@ export default function FormatsPane ({
 }) {
 
 	const [currentTabIndex, setCurrentTabIndex] = React.useState(1);
+	const [showContent, setShowContent] = React.useState(true);
 	let topTabBarProps = {
-		tabs, currentTabIndex, setCurrentTabIndex
+		tabs, currentTabIndex, setCurrentTabIndex,
+		showContent, setShowContent
 	};
 
 	function getCurrentTab () {
@@ -84,18 +86,18 @@ export default function FormatsPane ({
 	return (
 		<div className="FormatsPane grow bg-slate-100 border-b border-x border-slate-400">
 			<TopTabBar {...topTabBarProps} />
-			<div className="px-8 pt-6 -mb-4 md:hidden">
+			{showContent && <div className="px-8 pt-6 -mb-4 md:hidden">
 				<div className="h-24" style={{backgroundColor: hex}}></div>
-			</div>
-			<div className="pt-4">
+			</div>}
+			{showContent && <div className="pt-4">
 				{getCurrentTab()}
-			</div>
-			<NSelector {...nSelectorProps} />
-			<div className="flex px-4 py-4 bg-slate-300">
+			</div>}
+			{showContent && <NSelector {...nSelectorProps} />}
+			{showContent && <div className="flex px-4 py-4 bg-slate-300">
 				<BigButton title="Curated" handleClick={() => openVaultTab(0)} />
 				<BigButton title="History" handleClick={() => openVaultTab(1)} />
 				<BigButton title="Saved" handleClick={() => openVaultTab(2)} />
-			</div>
+			</div>}
 		</div>
 	);
 }
