@@ -2,8 +2,9 @@ import React from 'react';
 import colorita from 'colorita';
 
 import BackgroundStrip from './BackgroundStrip';
+import FormatsPane from './FormatsPane';
+import ControlsPane from './ControlsPane';
 
-import BigBox from './BigBox';
 import BigButton from '../../BigButton';
 
 import TopTabBar from './TopTabBar';
@@ -115,7 +116,7 @@ export default function ColorInput ({
 	}
 
 	const basicColors = settings.basicColors;
-	let bigBoxProps = {
+	const controlsPaneProps = {
 		red, green, blue,
 		tintColor, toneColor, shadeColor,
 		flipColor, randomizeColor, saveColor,
@@ -247,9 +248,7 @@ export default function ColorInput ({
 						<BigButton title="Saved" handleClick={() => openVaultTab(2)} />
 					</div>
 				</div>
-				<div className="md:w-1/2 md:pl-2">
-					<BigBox {...bigBoxProps} />
-				</div>
+				<ControlsPane {...controlsPaneProps} />
 			</div>
 		</div>
 	);

@@ -1,7 +1,7 @@
 import colorita from 'colorita';
 
-import BigButton from '../../BigButton';
-import ColorButton from './ColorButton';
+import BigButton from '../../../BigButton';
+import ColorButton from './../ColorButton';
 
 
 
