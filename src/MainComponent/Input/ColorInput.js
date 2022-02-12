@@ -1,6 +1,5 @@
 import React from 'react';
 import colorita from 'colorita';
-import {HSV2HSL} from '../../Utils';
 
 import BigBox from './BigBox';
 import BigButton from '../../BigButton';
@@ -108,7 +107,7 @@ export default function ColorInput ({
 	}
 
 	function setHSV (h, s, v) {
-		let [H, S, L] = HSV2HSL(h, s, v);
+		let [H, S, L] = colorita.HSV2HSL(h, s, v);
 		let [r, g, b] = colorita.hslToRgb(H, S, L);
 		setRGB(r, g, b);
 	}

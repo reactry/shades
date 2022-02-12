@@ -2,7 +2,6 @@ import React from 'react';
 import colorita from 'colorita';
 
 import NumberSlider from './NumberSlider';
-import {HSL2HSV} from '../../Utils';
 
 
 
@@ -11,7 +10,7 @@ export default function HSVTab ({
 	setHSV
 }) {
 
-	let [H, S, V] = HSL2HSV(...colorita.rgbToHsl(red, green, blue));
+	let [H, S, V] = colorita.HSL2HSV(...colorita.rgbToHsl(red, green, blue));
 
 	function updateColor () {
 		setHSV(H, S, V);
