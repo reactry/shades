@@ -1,5 +1,4 @@
 import React from 'react';
-import colorita from 'colorita';
 
 import ColorMeter from './ColorMeter';
 import OutputTabBar from './OutputTabBar';

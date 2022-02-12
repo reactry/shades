@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TopTabBar from './TopTabBar';
+import FormatsTabBar from './FormatsTabBar';
 import NSelector from './NSelector';
 
 import HexTab from './HexTab';
@@ -38,8 +38,8 @@ export default function FormatsPane ({
 }) {
 
 	const [currentTabIndex, setCurrentTabIndex] = React.useState(1);
-	const [showContent, setShowContent] = React.useState(true);
-	let topTabBarProps = {
+	const [showContent, setShowContent] = React.useState(false);
+	let formatsTabBarProps = {
 		tabs, currentTabIndex, setCurrentTabIndex,
 		showContent, setShowContent
 	};
@@ -85,7 +85,7 @@ export default function FormatsPane ({
 
 	return (
 		<div className="FormatsPane grow bg-slate-100 border-b border-x border-slate-400">
-			<TopTabBar {...topTabBarProps} />
+			<FormatsTabBar {...formatsTabBarProps} />
 			{showContent && <div className="px-8 pt-6 -mb-4 md:hidden">
 				<div className="h-24" style={{backgroundColor: hex}}></div>
 			</div>}

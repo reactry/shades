@@ -87,8 +87,7 @@ export default function ColorInput ({
 
 	const formatsPaneProps = {
 		red, green, blue, hex, n,
-		setRed, setGreen, setBlue,
-		setRedIsFixed, setGreenIsFixed, setBlueIsFixed, setN,
+		setRed, setGreen, setBlue, setN,
 		redIsFixed, greenIsFixed, blueIsFixed,
 		setRedIsFixed, setGreenIsFixed, setBlueIsFixed,
 		setRGB, setHSL, setHSV,

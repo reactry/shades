@@ -1,7 +1,7 @@
 
 
 
-export default function TopTabBar ({
+export default function FormatsTabBar ({
 	tabs, currentTabIndex, setCurrentTabIndex,
 	showContent, setShowContent
 }) {
@@ -26,7 +26,7 @@ export default function TopTabBar ({
 	});
 
 	return (
-		<div className="TopTabBar select-none">
+		<div className="FormatsTabBar select-none">
 			<div className="flex text-center text-sm font-bold bg-slate-300">
 				{tabItems}
 			</div>
