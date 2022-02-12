@@ -42,7 +42,7 @@ input.LightnessSlider {
 }
 
 input.HSVSaturationSlider {
-	background: linear-gradient(to right, #fff, red);
+	background: linear-gradient(to right, gray, red);
 }
 
 input.ValueSlider {

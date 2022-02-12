@@ -1,7 +1,7 @@
 import React from 'react';
 
-import BigButton from '../../BigButton';
-import Toggle from '../../Toggle';
+import BigButton from '../../../BigButton';
+import Toggle from '../../../Toggle';
 
 
 
