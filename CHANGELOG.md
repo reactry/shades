@@ -7,8 +7,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
-## `0.8.0` - `Future`
+## `0.9.0` - `Future`
+* Nothing here just yet.
+
+
+## `0.8.0` - `2022-02-12`
+* Added and implemented `HSV` sliders.
 * Added `CopyTab` content.
+* Added `PaletteTab` to `ColorOutput`.
+* Added 2 `Thanks` entries.
+* Added color strip at top of `ColorInput` in mobile view.
+* Added accessibility scores and text-blocks.
+* Added empty `PaletteTab`.
 
 
 ## `0.7.0` - `2022-02-11`
